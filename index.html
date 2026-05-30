@@ -5,19 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>Abhishek Pal — Growth Marketing Portfolio</title>
-
-<meta name="description" content="Growth Marketing, GTM, Performance Marketing portfolio of Abhishek Pal. Built 0→165K MAUs, managed ₹20L/month media budgets, 3.1× ROAS, 12M+ impressions, and 100+ creator campaigns." />
+<meta name="description" content="Growth & GTM Marketing portfolio of Abhishek Pal. Built 0→165K MAUs, managed ₹18–20L/month media, 3.1× ROAS, 12M+ impressions, and 100+ creator partnerships." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* =========================================================
-   RESET + TOKENS
-========================================================= */
-
-*, *::before, *::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -25,36 +20,21 @@
 
 :root {
   --bg: #F7F4EF;
-  --bg-2: #EEEAE2;
   --surface: #FFFFFF;
-  --surface-soft: #FBFAF7;
+  --surface-2: #EEEAE2;
   --ink: #101010;
-  --ink-2: #343632;
+  --ink-2: #333;
   --muted: #666963;
   --muted-2: #8A8C86;
   --line: #DDD8CF;
-
   --green: #183A2E;
   --green-2: #2C6A50;
+  --gold: #B9822B;
   --blue: #172B4D;
   --blue-2: #315B91;
-  --gold: #B9822B;
-  --orange: #C56B35;
-  --red: #8F3F2B;
-
   --serif: 'DM Serif Display', Georgia, serif;
   --sans: 'DM Sans', system-ui, sans-serif;
   --mono: 'JetBrains Mono', monospace;
-
-  --radius-xl: 32px;
-  --radius-lg: 24px;
-  --radius-md: 16px;
-  --radius-sm: 10px;
-
-  --shadow-soft: 0 24px 80px rgba(16,16,16,0.08);
-  --shadow-card: 0 14px 42px rgba(16,16,16,0.07);
-
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
@@ -64,11 +44,10 @@ html {
 body {
   font-family: var(--sans);
   background:
-    radial-gradient(circle at 78% 10%, rgba(44,106,80,0.12), transparent 28%),
-    radial-gradient(circle at 8% 38%, rgba(185,130,43,0.09), transparent 24%),
+    radial-gradient(circle at 80% 8%, rgba(44,106,80,0.12), transparent 28%),
+    radial-gradient(circle at 8% 38%, rgba(185,130,43,0.08), transparent 24%),
     var(--bg);
   color: var(--ink);
-  font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -91,14 +70,6 @@ a {
   text-decoration: none;
 }
 
-button {
-  font-family: inherit;
-}
-
-/* =========================================================
-   UTILITIES
-========================================================= */
-
 .container {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
@@ -120,17 +91,17 @@ button {
 
 .section-title {
   font-family: var(--serif);
-  font-size: clamp(2.3rem, 5vw, 4.2rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-  max-width: 760px;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  max-width: 820px;
 }
 
 .section-sub {
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.75;
-  max-width: 660px;
+  max-width: 720px;
   margin-top: 20px;
 }
 
@@ -138,20 +109,18 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
   height: 48px;
   padding: 0 20px;
   border-radius: 999px;
   font-size: 0.92rem;
   font-weight: 600;
-  cursor: pointer;
   border: 1px solid transparent;
-  transition: 0.25s var(--ease);
+  transition: 0.22s ease;
 }
 
 .btn-primary {
   background: var(--green);
-  color: #fff;
+  color: white;
   box-shadow: 0 10px 30px rgba(24,58,46,0.22);
 }
 
@@ -161,10 +130,9 @@ button {
 }
 
 .btn-secondary {
-  background: rgba(255,255,255,0.68);
+  background: rgba(255,255,255,0.7);
   border-color: var(--line);
   color: var(--ink);
-  backdrop-filter: blur(12px);
 }
 
 .btn-secondary:hover {
@@ -177,36 +145,33 @@ button {
   align-items: center;
   gap: 8px;
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.68);
   padding: 8px 13px;
   border-radius: 999px;
   font-size: 0.78rem;
   color: var(--muted);
-  backdrop-filter: blur(10px);
 }
 
 .pill-dot {
   width: 7px;
   height: 7px;
-  border-radius: 50%;
   background: #2ECC71;
+  border-radius: 999px;
   box-shadow: 0 0 0 4px rgba(46,204,113,0.12);
 }
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transform: translateY(22px);
+  transition: 0.75s ease;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-/* =========================================================
-   NAV
-========================================================= */
+/* NAV */
 
 .progress {
   position: fixed;
@@ -223,76 +188,61 @@ button {
   top: 3px;
   left: 0;
   right: 0;
-  z-index: 100;
   height: 74px;
-  display: flex;
-  align-items: center;
+  z-index: 100;
   backdrop-filter: blur(18px);
-  background: rgba(247,244,239,0.82);
-  border-bottom: 1px solid rgba(221,216,207,0.75);
+  background: rgba(247,244,239,0.86);
+  border-bottom: 1px solid rgba(221,216,207,0.78);
 }
 
 .nav-inner {
   width: min(1180px, calc(100% - 40px));
+  height: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
 .logo strong {
+  display: block;
   font-family: var(--serif);
   font-size: 1.3rem;
-  letter-spacing: -0.02em;
+  line-height: 1;
 }
 
 .logo span {
+  display: block;
   font-family: var(--mono);
   font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   margin-top: 4px;
 }
 
 .nav-links {
   display: flex;
-  align-items: center;
   gap: 28px;
+  align-items: center;
 }
 
 .nav-links a {
-  color: var(--muted);
   font-size: 0.9rem;
+  color: var(--muted);
   font-weight: 500;
-  transition: color 0.2s;
 }
 
 .nav-links a:hover {
   color: var(--ink);
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .nav-resume {
   height: 40px;
-  padding: 0 16px;
   font-size: 0.82rem;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero {
   min-height: 100vh;
@@ -310,20 +260,18 @@ button {
 
 .hero h1 {
   font-family: var(--serif);
-  font-size: clamp(3.6rem, 8vw, 7.4rem);
+  font-size: clamp(3.6rem, 8vw, 7.3rem);
   line-height: 0.9;
   letter-spacing: -0.065em;
   margin: 24px 0;
-  max-width: 820px;
 }
 
 .hero h1 em {
-  font-style: italic;
   color: var(--green-2);
 }
 
 .hero-copy {
-  max-width: 620px;
+  max-width: 640px;
   color: var(--ink-2);
   font-size: clamp(1.05rem, 1.6vw, 1.22rem);
   line-height: 1.75;
@@ -338,14 +286,10 @@ button {
 
 .hero-proof {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
   margin-top: 24px;
 }
-
-/* =========================================================
-   HERO DASHBOARD
-========================================================= */
 
 .hero-visual {
   position: relative;
@@ -353,16 +297,13 @@ button {
 }
 
 .command-card {
-  position: relative;
   background:
-    linear-gradient(145deg, rgba(255,255,255,0.86), rgba(255,255,255,0.58)),
+    linear-gradient(145deg, rgba(255,255,255,0.88), rgba(255,255,255,0.58)),
     radial-gradient(circle at top right, rgba(44,106,80,0.14), transparent 42%);
-  border: 1px solid rgba(221,216,207,0.85);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(221,216,207,0.9);
+  border-radius: 32px;
+  box-shadow: 0 24px 80px rgba(16,16,16,0.08);
   padding: 26px;
-  overflow: hidden;
-  backdrop-filter: blur(20px);
 }
 
 .command-top {
@@ -388,15 +329,15 @@ button {
   border: 1px solid var(--line);
   padding: 6px 9px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.62);
+  background: rgba(255,255,255,0.64);
 }
 
 .chart-wrap {
   background: #101714;
   border-radius: 24px;
   padding: 24px;
-  color: #fff;
-  min-height: 245px;
+  color: white;
+  min-height: 250px;
   position: relative;
   overflow: hidden;
 }
@@ -409,12 +350,16 @@ button {
     linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
   background-size: 34px 34px;
-  opacity: 0.7;
+}
+
+.chart-title,
+.chart-caption,
+.chart-number {
+  position: relative;
+  z-index: 1;
 }
 
 .chart-title {
-  position: relative;
-  z-index: 1;
   font-family: var(--mono);
   font-size: 0.7rem;
   color: rgba(255,255,255,0.6);
@@ -423,8 +368,6 @@ button {
 }
 
 .chart-number {
-  position: relative;
-  z-index: 1;
   font-family: var(--serif);
   font-size: 3.8rem;
   letter-spacing: -0.04em;
@@ -432,11 +375,23 @@ button {
 }
 
 .chart-caption {
-  position: relative;
-  z-index: 1;
-  color: rgba(255,255,255,0.66);
+  color: rgba(255,255,255,0.68);
   font-size: 0.9rem;
-  margin-top: -4px;
+}
+
+.metric-context-label {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+}
+
+.chart-wrap .metric-context-label {
+  color: rgba(255,255,255,0.48);
 }
 
 .svg-chart {
@@ -446,52 +401,6 @@ button {
   bottom: 16px;
   height: 115px;
   z-index: 1;
-}
-
-.metric-float {
-  position: absolute;
-  background: rgba(255,255,255,0.86);
-  border: 1px solid rgba(221,216,207,0.9);
-  border-radius: 20px;
-  box-shadow: var(--shadow-card);
-  padding: 16px 18px;
-  backdrop-filter: blur(18px);
-  animation: floaty 6s ease-in-out infinite;
-}
-
-.metric-float strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 1.9rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.metric-float span {
-  display: block;
-  margin-top: 6px;
-  font-family: var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.float-1 {
-  top: 58px;
-  right: -18px;
-}
-
-.float-2 {
-  left: -28px;
-  bottom: 138px;
-  animation-delay: 0.7s;
-}
-
-.float-3 {
-  right: 34px;
-  bottom: 16px;
-  animation-delay: 1.4s;
 }
 
 .command-grid {
@@ -522,18 +431,47 @@ button {
   font-size: 0.95rem;
 }
 
+.metric-float {
+  position: absolute;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(221,216,207,0.9);
+  border-radius: 20px;
+  padding: 16px 18px;
+  box-shadow: 0 14px 42px rgba(16,16,16,0.08);
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.metric-float strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.metric-float span {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.float-1 { top: 58px; right: -18px; }
+.float-2 { left: -28px; bottom: 138px; animation-delay: 0.7s; }
+.float-3 { right: 34px; bottom: 16px; animation-delay: 1.4s; }
+
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-9px); }
 }
 
-/* =========================================================
-   METRICS STRIP
-========================================================= */
+/* METRICS */
 
 .metrics-band {
   background: var(--green);
-  color: #fff;
+  color: white;
   padding: 34px 0;
 }
 
@@ -557,14 +495,13 @@ button {
   font-family: var(--serif);
   font-size: 2.6rem;
   line-height: 1;
-  letter-spacing: -0.04em;
 }
 
 .metric-tile span {
   display: block;
-  color: rgba(255,255,255,0.72);
   font-family: var(--mono);
   font-size: 0.68rem;
+  color: rgba(255,255,255,0.72);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-top: 9px;
@@ -577,9 +514,7 @@ button {
   margin-top: 10px;
 }
 
-/* =========================================================
-   ABOUT
-========================================================= */
+/* ABOUT */
 
 .about-grid {
   display: grid;
@@ -599,30 +534,42 @@ button {
 .profile-card {
   background: rgba(255,255,255,0.72);
   border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
+  border-radius: 32px;
   padding: 26px;
-  box-shadow: var(--shadow-card);
-  backdrop-filter: blur(18px);
+  box-shadow: 0 14px 42px rgba(16,16,16,0.07);
 }
 
 .profile-head {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   padding-bottom: 22px;
   border-bottom: 1px solid var(--line);
 }
 
 .avatar {
-  width: 58px;
-  height: 58px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, var(--green), var(--gold));
-  display: grid;
-  place-items: center;
-  color: #fff;
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  border-radius: 30px;
+  background: #F3F0E8;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  box-shadow: 0 18px 34px rgba(16,16,16,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
   font-family: var(--serif);
-  font-size: 1.55rem;
+  font-size: 2rem;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .profile-head h3 {
@@ -645,8 +592,8 @@ button {
 .bar-row {
   display: grid;
   grid-template-columns: 112px 1fr;
-  align-items: center;
   gap: 14px;
+  align-items: center;
 }
 
 .bar-row span {
@@ -659,7 +606,7 @@ button {
 
 .bar {
   height: 8px;
-  background: var(--bg-2);
+  background: var(--surface-2);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -679,7 +626,7 @@ button {
 }
 
 .fact {
-  background: var(--surface-soft);
+  background: rgba(255,255,255,0.75);
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 16px;
@@ -699,24 +646,17 @@ button {
   font-size: 0.93rem;
 }
 
-/* =========================================================
-   EXPERIENCE
-========================================================= */
+/* EXPERIENCE */
 
 .experience {
   background: #111714;
-  color: #fff;
+  color: white;
   border-radius: 44px 44px 0 0;
   margin-top: 50px;
 }
 
-.experience .eyebrow {
-  color: #98D7B8;
-}
-
-.experience .section-sub {
-  color: rgba(255,255,255,0.64);
-}
+.experience .eyebrow { color: #98D7B8; }
+.experience .section-sub { color: rgba(255,255,255,0.64); }
 
 .experience-grid {
   margin-top: 52px;
@@ -735,12 +675,6 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: 0.25s var(--ease);
-}
-
-.exp-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255,255,255,0.28);
 }
 
 .exp-card.large {
@@ -752,15 +686,36 @@ button {
 }
 
 .exp-logo {
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
+  width: auto;
+  min-width: 72px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
   background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.20);
+  color: white;
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-logo.logo-img {
+  width: 128px;
+  height: 70px;
+  padding: 12px;
+  border-radius: 18px;
+  background: white;
+}
+
+.exp-logo.logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .exp-meta {
@@ -802,23 +757,31 @@ button {
   padding: 6px 9px;
 }
 
-/* =========================================================
-   WORK / CASE STUDIES
-========================================================= */
+.brand-image-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.brand-image-row img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+/* WORK */
 
 .work {
   background: #111714;
-  color: #fff;
+  color: white;
   padding-bottom: 120px;
 }
 
-.work .eyebrow {
-  color: #98D7B8;
-}
-
-.work .section-sub {
-  color: rgba(255,255,255,0.64);
-}
+.work .eyebrow { color: #98D7B8; }
+.work .section-sub { color: rgba(255,255,255,0.64); }
 
 .case-stack {
   margin-top: 60px;
@@ -831,14 +794,12 @@ button {
   color: var(--ink);
   border-radius: 34px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.16);
   box-shadow: 0 30px 80px rgba(0,0,0,0.18);
 }
 
 .case-inner {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
-  gap: 0;
 }
 
 .case-visual {
@@ -874,32 +835,44 @@ button {
 }
 
 .mock-dashboard {
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.72);
   border: 1px solid var(--line);
   border-radius: 26px;
   padding: 22px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 14px 42px rgba(16,16,16,0.07);
 }
 
 .mock-top {
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   margin-bottom: 22px;
 }
 
 .mock-top span {
   font-family: var(--mono);
   font-size: 0.68rem;
+  color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--muted);
 }
 
 .mock-num {
   font-family: var(--serif);
   font-size: 3.3rem;
-  letter-spacing: -0.045em;
   line-height: 1;
+}
+
+.chart-caption-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .mock-chart {
@@ -985,9 +958,8 @@ button {
   border-radius: 24px;
   display: grid;
   place-items: center;
-  background: var(--surface);
+  background: white;
   border: 1px solid var(--line);
-  box-shadow: var(--shadow-card);
   font-family: var(--mono);
   font-size: 0.68rem;
   color: var(--muted);
@@ -1000,7 +972,7 @@ button {
   left: calc(50% - 48px);
   top: calc(50% - 48px);
   background: var(--green);
-  color: #fff;
+  color: white;
 }
 
 .case-content {
@@ -1028,7 +1000,6 @@ button {
   color: var(--ink-2);
   font-size: 1.02rem;
   line-height: 1.75;
-  max-width: 620px;
 }
 
 .snapshot {
@@ -1043,16 +1014,16 @@ button {
 }
 
 .snapshot div {
-  background: var(--surface);
+  background: white;
   padding: 17px;
 }
 
 .snapshot span {
   font-family: var(--mono);
   font-size: 0.62rem;
+  color: var(--muted-2);
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: var(--muted-2);
 }
 
 .snapshot strong {
@@ -1100,58 +1071,191 @@ button {
   color: var(--ink-2);
 }
 
-/* =========================================================
-   GROWTH SYSTEM
-========================================================= */
+/* PROOF BLOCKS */
 
-.system-grid {
-  margin-top: 50px;
+.final-proof-block {
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255,255,255,0.78);
+}
+
+.final-proof-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--green-2);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.mau-bar-chart {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(11, 1fr);
+  gap: 8px;
+  align-items: end;
+  height: 220px;
+  padding: 18px 10px 8px;
+  border-radius: 18px;
+  background:
+    linear-gradient(to top, rgba(44,106,80,0.08), transparent),
+    repeating-linear-gradient(to bottom, transparent, transparent 43px, rgba(16,16,16,0.05) 44px);
+  border: 1px solid var(--line);
+}
+
+.mau-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  height: 100%;
+}
+
+.mau-bar {
+  width: 100%;
+  max-width: 28px;
+  border-radius: 999px 999px 6px 6px;
+  background: linear-gradient(180deg, var(--green-2), var(--green), var(--gold));
+}
+
+.mau-value {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.mau-month {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  color: var(--muted-2);
+  text-transform: uppercase;
+}
+
+.chart-note {
+  margin-top: 14px;
+  padding: 13px 15px;
+  border-radius: 14px;
+  background: rgba(44,106,80,0.08);
+  border: 1px solid rgba(44,106,80,0.16);
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.creator-tier-grid,
+.tyroo-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
-.system-step {
+.tyroo-visual-grid {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+}
+
+.creator-tier-card,
+.tyroo-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(255,255,255,0.82);
+}
+
+.creator-tier-card strong,
+.tyroo-card strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.creator-tier-card h5 {
+  margin-top: 12px;
+  font-size: 0.98rem;
+}
+
+.creator-tier-card p,
+.tyroo-card p {
+  margin-top: 7px;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.tyroo-card span {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tyroo-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.tyroo-cluster span {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-2);
+  background: rgba(49,91,145,0.10);
+  border: 1px solid rgba(49,91,145,0.16);
+  border-radius: 999px;
+  padding: 8px 11px;
+}
+
+/* SYSTEM / CAPABILITIES */
+
+.system-grid,
+.cap-grid,
+.shortlist-grid {
+  margin-top: 50px;
+  display: grid;
+  gap: 18px;
+}
+
+.system-grid { grid-template-columns: repeat(5, 1fr); }
+.cap-grid { grid-template-columns: repeat(3, 1fr); }
+.shortlist-grid { grid-template-columns: repeat(4, 1fr); }
+
+.system-step,
+.cap-card,
+.short-card {
   background: rgba(255,255,255,0.72);
   border: 1px solid var(--line);
   border-radius: 24px;
   padding: 22px;
-  box-shadow: var(--shadow-card);
 }
 
-.system-step span {
+.cap-card {
+  border-radius: 26px;
+  padding: 24px;
+}
+
+.system-step span,
+.short-card span {
   font-family: var(--mono);
   color: var(--green-2);
   font-size: 0.7rem;
 }
 
-.system-step h3 {
-  margin: 18px 0 8px;
+.system-step h3,
+.short-card h3 {
+  margin: 16px 0 8px;
   font-size: 1.05rem;
 }
 
-.system-step p {
+.system-step p,
+.short-card p,
+.cap-card p {
   color: var(--muted);
-  font-size: 0.88rem;
-}
-
-/* =========================================================
-   CAPABILITIES
-========================================================= */
-
-.cap-grid {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.cap-card {
-  background: rgba(255,255,255,0.72);
-  border: 1px solid var(--line);
-  border-radius: 26px;
-  padding: 24px;
-  box-shadow: var(--shadow-card);
+  font-size: 0.9rem;
 }
 
 .cap-icon {
@@ -1159,7 +1263,7 @@ button {
   height: 42px;
   border-radius: 14px;
   background: var(--green);
-  color: #fff;
+  color: white;
   display: grid;
   place-items: center;
   margin-bottom: 18px;
@@ -1168,14 +1272,7 @@ button {
 .cap-card h3 {
   font-family: var(--serif);
   font-size: 1.45rem;
-  letter-spacing: -0.03em;
   margin-bottom: 8px;
-}
-
-.cap-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.65;
 }
 
 .tool-line {
@@ -1187,45 +1284,13 @@ button {
   letter-spacing: 0.08em;
 }
 
-/* =========================================================
-   SHORTLIST + CONTACT
-========================================================= */
+/* CONTACT */
 
 .shortlist {
-  background: var(--bg-2);
+  background: var(--surface-2);
   border-radius: 44px;
   margin: 40px auto;
   width: min(1220px, calc(100% - 28px));
-}
-
-.shortlist-grid {
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.short-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 22px;
-}
-
-.short-card span {
-  font-family: var(--mono);
-  color: var(--green-2);
-  font-size: 0.68rem;
-}
-
-.short-card h3 {
-  margin: 16px 0 8px;
-  font-size: 1.02rem;
-}
-
-.short-card p {
-  color: var(--muted);
-  font-size: 0.88rem;
 }
 
 .contact {
@@ -1236,7 +1301,7 @@ button {
   background:
     radial-gradient(circle at 80% 0%, rgba(44,106,80,0.18), transparent 34%),
     var(--green);
-  color: #fff;
+  color: white;
   border-radius: 38px;
   padding: clamp(34px, 6vw, 72px);
   display: grid;
@@ -1249,7 +1314,6 @@ button {
   font-family: var(--serif);
   font-size: clamp(2.6rem, 6vw, 5rem);
   line-height: 0.95;
-  letter-spacing: -0.055em;
 }
 
 .contact-card p {
@@ -1267,13 +1331,13 @@ button {
 }
 
 .contact-actions .btn-primary {
-  background: #fff;
+  background: white;
   color: var(--green);
 }
 
 .contact-actions .btn-secondary {
   background: rgba(255,255,255,0.08);
-  color: #fff;
+  color: white;
   border-color: rgba(255,255,255,0.16);
 }
 
@@ -1301,7 +1365,6 @@ button {
 .contact-info strong {
   display: block;
   margin-top: 8px;
-  font-size: 0.95rem;
 }
 
 .footer {
@@ -1319,14 +1382,10 @@ button {
   flex-wrap: wrap;
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* RESPONSIVE */
 
 @media (max-width: 980px) {
-  .nav-links {
-    display: none;
-  }
+  .nav-links { display: none; }
 
   .hero-grid,
   .about-grid,
@@ -1335,17 +1394,10 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .hero {
-    padding-top: 130px;
-  }
+  .hero { padding-top: 130px; }
+  .hero-visual { min-height: auto; }
 
-  .hero-visual {
-    min-height: auto;
-  }
-
-  .metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
 
   .experience-grid,
   .cap-grid,
@@ -1354,9 +1406,7 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .exp-card.large {
-    min-height: auto;
-  }
+  .exp-card.large { min-height: auto; }
 
   .case-visual {
     min-height: 420px;
@@ -1365,27 +1415,18 @@ button {
   }
 }
 
-@media (max-width: 620px) {
-  .container {
-    width: min(100% - 28px, 1180px);
-  }
-
-  .section {
-    padding: 76px 0;
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 17vw, 4.6rem);
-  }
+@media (max-width: 700px) {
+  .container { width: min(100% - 28px, 1180px); }
+  .section { padding: 76px 0; }
+  .hero h1 { font-size: clamp(3rem, 17vw, 4.6rem); }
 
   .metrics-grid,
   .snapshot,
-  .profile-facts {
-    grid-template-columns: 1fr;
-  }
-
+  .profile-facts,
   .command-grid,
-  .visual-mini-grid {
+  .visual-mini-grid,
+  .creator-tier-grid,
+  .tyroo-visual-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1395,19 +1436,17 @@ button {
     animation: none;
   }
 
-  .float-1,
-  .float-2,
-  .float-3 {
-    inset: auto;
+  .brand-image-row {
+    grid-template-columns: 1fr;
   }
 
-  .hero-visual {
-    display: flex;
-    flex-direction: column;
+  .brand-image-row img {
+    height: 150px;
   }
 
-  .contact-card {
-    padding: 30px;
+  .mau-bar-chart {
+    overflow-x: auto;
+    grid-template-columns: repeat(11, minmax(38px, 1fr));
   }
 }
 </style>
@@ -1417,7 +1456,6 @@ button {
 
 <div class="progress" id="progress"></div>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="#hero" class="logo">
@@ -1432,33 +1470,24 @@ button {
       <a href="#contact">Contact</a>
     </div>
 
-    <div class="nav-actions">
-      <a class="btn btn-secondary nav-resume" href="#" target="_blank">Resume ↗</a>
-    </div>
+    <a class="btn btn-secondary nav-resume" href="resume.pdf.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <header class="hero" id="hero">
   <div class="container hero-grid">
+    <div class="reveal">
+      <div class="pill"><span class="pill-dot"></span>Open to Growth / GTM / Performance roles</div>
 
-    <div class="hero-copy-wrap reveal">
-      <div class="pill">
-        <span class="pill-dot"></span>
-        Open to Growth / GTM / Performance roles
-      </div>
-
-      <h1>
-        I build growth engines that move the business, <em>not just the dashboard.</em>
-      </h1>
+      <h1>I build growth engines that move the business, <em>not just the dashboard.</em></h1>
 
       <p class="hero-copy">
-        Growth marketer with 3 years across D2C, consumer tech, AdTech, and re-commerce — building paid acquisition systems, creator-led launches, GTM motions, and partner growth engines from zero to scale.
+        Growth marketer with 3+ years across consumer tech, D2C, AdTech, and re-commerce — building paid acquisition systems, creator-led launches, GTM motions, and partner growth engines from zero to scale.
       </p>
 
       <div class="hero-actions">
         <a href="#work" class="btn btn-primary">View case studies ↓</a>
-        <a href="#" class="btn btn-secondary">Download resume ↗</a>
+        <a href="resume.pdf.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Download resume ↗</a>
         <a href="mailto:abhishekkpal1998@gmail.com" class="btn btn-secondary">Email me</a>
       </div>
 
@@ -1479,7 +1508,10 @@ button {
         <div class="chart-wrap">
           <div class="chart-title">MAU growth system</div>
           <div class="chart-number">0 → 165K</div>
-          <div class="chart-caption">Built from zero in a category-creation market</div>
+          <div class="chart-caption">
+            Built from zero in 11 months · Jun 2023 – May 2024
+            <span class="metric-context-label">at ₹12–18L/month average media spend</span>
+          </div>
 
           <svg class="svg-chart" viewBox="0 0 500 140" preserveAspectRatio="none">
             <path d="M0,118 C55,112 82,112 120,100 C165,86 168,70 218,75 C270,82 284,50 330,46 C390,41 415,22 500,15"
@@ -1501,33 +1533,21 @@ button {
         </div>
       </div>
 
-      <div class="metric-float float-1">
-        <strong>3.1×</strong>
-        <span>Peak ROAS</span>
-      </div>
-
-      <div class="metric-float float-2">
-        <strong>₹20L</strong>
-        <span>Media / month</span>
-      </div>
-
-      <div class="metric-float float-3">
-        <strong>100+</strong>
-        <span>Creators</span>
-      </div>
+      <div class="metric-float float-1"><strong>3.1×</strong><span>Peak ROAS</span></div>
+      <div class="metric-float float-2"><strong>₹18–20L</strong><span>Media / month</span></div>
+      <div class="metric-float float-3"><strong>100+</strong><span>Creators</span></div>
     </div>
-
   </div>
 </header>
 
-<!-- METRICS -->
 <section class="metrics-band">
   <div class="container">
     <div class="metrics-grid reveal">
       <div class="metric-tile">
         <strong>165K+</strong>
         <span>MAUs built from zero</span>
-        <small>Aerohyre</small>
+        <small>Aerohyre · 11 months · Jun 2023 – May 2024</small>
+        <small>at ₹12–18L/month average media spend</small>
       </div>
       <div class="metric-tile">
         <strong>3.1×</strong>
@@ -1535,7 +1555,7 @@ button {
         <small>Paid acquisition</small>
       </div>
       <div class="metric-tile">
-        <strong>₹20L</strong>
+        <strong>₹18–20L</strong>
         <span>Monthly media budgets</span>
         <small>Google · Meta · YouTube</small>
       </div>
@@ -1553,7 +1573,6 @@ button {
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="section" id="about">
   <div class="container about-grid">
     <div class="reveal">
@@ -1561,23 +1580,21 @@ button {
       <h2 class="section-title">I started with math. Marketing made it useful.</h2>
 
       <div class="about-copy">
-        <p>
-          I didn’t enter marketing from the usual path. I studied mathematics first, which made me comfortable with patterns, ambiguity, and numbers.
-        </p>
+        <p>I didn't enter marketing from the usual path. I studied mathematics first — which made me comfortable with patterns, ambiguity, and numbers that don't cooperate on day one.</p>
         <br>
-        <p>
-          That helped when I moved into growth — where the work is rarely just “run ads.” It is understanding the market, building the funnel, testing the message, reading the data, and knowing when to scale.
-        </p>
+        <p>That background helped when I moved into growth — where the real work is rarely just “run ads.” It's understanding the market, sequencing the funnel, stress-testing the message, reading the data, and knowing when to scale versus when to rebuild the engine entirely.</p>
         <br>
-        <p>
-          I’ve worked across consumer electronics, aviation tech, re-commerce, and AdTech. The common thread: I like messy growth problems where strategy and execution have to happen together.
-        </p>
+        <p>At Aerohyre, I built a hiring platform's entire acquisition system from zero in a market that didn't yet exist as a category — no benchmarks, no playbook, just first principles. At Super Plastronics, I ran creator-led TV launches against Samsung-scale trust with a fraction of the budget. At Cashify, I turned an underactivated affiliate base into a structured revenue channel by treating it like account-based sales. At Tyroo, I built B2B GTM positioning for AdTech clients across APAC.</p>
+        <br>
+        <p>The common thread: I like messy growth problems where strategy and execution have to happen in the same room, often in the same week.</p>
       </div>
     </div>
 
     <div class="profile-card reveal">
       <div class="profile-head">
-        <div class="avatar">AP</div>
+        <div class="avatar">
+          <img src="photo.jpg.jpg" alt="Abhishek Pal" onerror="this.style.display='none'; this.parentElement.textContent='AP';">
+        </div>
         <div>
           <h3>Operator profile</h3>
           <p>Growth · GTM · Performance · Partnerships</p>
@@ -1585,73 +1602,43 @@ button {
       </div>
 
       <div class="operator-bars">
-        <div class="bar-row">
-          <span>Strategy</span>
-          <div class="bar"><i style="width: 92%"></i></div>
-        </div>
-        <div class="bar-row">
-          <span>Execution</span>
-          <div class="bar"><i style="width: 96%"></i></div>
-        </div>
-        <div class="bar-row">
-          <span>Analytics</span>
-          <div class="bar"><i style="width: 88%"></i></div>
-        </div>
-        <div class="bar-row">
-          <span>Creative</span>
-          <div class="bar"><i style="width: 78%"></i></div>
-        </div>
-        <div class="bar-row">
-          <span>Stakeholders</span>
-          <div class="bar"><i style="width: 86%"></i></div>
-        </div>
+        <div class="bar-row"><span>Strategy</span><div class="bar"><i style="width: 92%"></i></div></div>
+        <div class="bar-row"><span>Execution</span><div class="bar"><i style="width: 96%"></i></div></div>
+        <div class="bar-row"><span>Analytics</span><div class="bar"><i style="width: 88%"></i></div></div>
+        <div class="bar-row"><span>Creative</span><div class="bar"><i style="width: 78%"></i></div></div>
+        <div class="bar-row"><span>Stakeholders</span><div class="bar"><i style="width: 86%"></i></div></div>
       </div>
 
       <div class="profile-facts">
-        <div class="fact">
-          <span>Currently</span>
-          <strong>MBA Marketing · Symbiosis 2026</strong>
-        </div>
-        <div class="fact">
-          <span>Based in</span>
-          <strong>New Delhi, India</strong>
-        </div>
-        <div class="fact">
-          <span>Best at</span>
-          <strong>Acquisition, CRO, GTM, creators</strong>
-        </div>
-        <div class="fact">
-          <span>Looking for</span>
-          <strong>Growth / GTM / Founder’s Office</strong>
-        </div>
+        <div class="fact"><span>Currently</span><strong>MBA Marketing · Symbiosis 2026</strong></div>
+        <div class="fact"><span>Based in</span><strong>New Delhi, India</strong></div>
+        <div class="fact"><span>Best at</span><strong>Acquisition, CRO, GTM, creators</strong></div>
+        <div class="fact"><span>Looking for</span><strong>Growth / GTM / Founder’s Office</strong></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section class="section experience" id="experience">
   <div class="container">
     <div class="reveal">
       <div class="eyebrow">Career journey</div>
       <h2 class="section-title">Built across brand, performance, marketplaces, partnerships, and GTM.</h2>
-      <p class="section-sub">
-        Each role added a different layer: launch thinking, acquisition systems, partner growth, and strategic GTM work.
-      </p>
+      <p class="section-sub">Each role added a different layer: launch thinking, acquisition systems, partner growth, and strategic GTM work.</p>
     </div>
 
     <div class="experience-grid">
       <div class="exp-card large reveal">
         <div>
-          <div class="exp-logo">AH</div>
+          <div class="exp-logo logo-img">
+            <img src="aerohyre logo PNG.jpg" alt="Aerohyre logo" onerror="this.style.display='none'; this.parentElement.className='exp-logo'; this.parentElement.textContent='AEROHYRE';">
+          </div>
           <div class="exp-meta">Jun 2023 – May 2024 · Aviation Tech</div>
           <h3>Aerohyre</h3>
-          <p>
-            Built the acquisition and analytics engine for India’s first aviation hiring platform — from category awareness to paid acquisition, CRO, SEO, and funnel reporting.
-          </p>
+          <p>Built the acquisition and analytics engine for India’s first aviation hiring platform — from category awareness to paid acquisition, CRO, SEO, and funnel reporting.</p>
         </div>
         <div class="exp-tags">
-          <span>0 → 165K MAUs</span>
+          <span>0 → 165K MAUs in 11 months</span>
           <span>8K+ sign-ups</span>
           <span>3.1× ROAS</span>
           <span>CAC optimization</span>
@@ -1660,9 +1647,17 @@ button {
 
       <div class="exp-card reveal">
         <div>
-          <div class="exp-logo">SP</div>
+          <div class="exp-logo logo-img">
+            <img src="SPPL-logo.png.png" alt="Super Plastronics logo" onerror="this.style.display='none'; this.parentElement.className='exp-logo'; this.parentElement.textContent='SPPL';">
+          </div>
           <div class="exp-meta">Nov 2021 – May 2023 · Consumer Electronics</div>
           <h3>Super Plastronics</h3>
+
+          <div class="brand-image-row">
+            <img src="Super Plastronics tv 1 JPEG.jpeg" alt="Super Plastronics TV campaign visual">
+            <img src="Super Plastronics TV 2 JPEG.jpeg" alt="Super Plastronics QLED TV campaign visual">
+          </div>
+
           <p>Worked across brand, performance, and influencer-led launches for licensed consumer electronics brands.</p>
         </div>
         <div class="exp-tags">
@@ -1673,7 +1668,9 @@ button {
 
       <div class="exp-card reveal">
         <div>
-          <div class="exp-logo">CF</div>
+          <div class="exp-logo logo-img">
+            <img src="Cashify logo PNG.png" alt="Cashify logo" onerror="this.style.display='none'; this.parentElement.className='exp-logo'; this.parentElement.textContent='CASHIFY';">
+          </div>
           <div class="exp-meta">Aug 2024 – Jan 2025 · Re-commerce</div>
           <h3>Cashify</h3>
           <p>Managed affiliate and creator ecosystem growth across partner accounts, campaign coordination, and revenue tracking.</p>
@@ -1686,7 +1683,9 @@ button {
 
       <div class="exp-card reveal">
         <div>
-          <div class="exp-logo">TY</div>
+          <div class="exp-logo logo-img">
+            <img src="Tyroo logo PNG.png" alt="Tyroo logo" onerror="this.style.display='none'; this.parentElement.className='exp-logo'; this.parentElement.textContent='TYROO';">
+          </div>
           <div class="exp-meta">Apr – Jun 2025 · AdTech</div>
           <h3>Tyroo</h3>
           <p>Worked on GTM positioning and SEO-led growth strategy across APAC clients in BFSI, Retail, and Gaming.</p>
@@ -1699,7 +1698,9 @@ button {
 
       <div class="exp-card reveal">
         <div>
-          <div class="exp-logo">SI</div>
+          <div class="exp-logo logo-img">
+            <img src="symbiosis-logo.png.png" alt="Symbiosis logo" onerror="this.style.display='none'; this.parentElement.className='exp-logo'; this.parentElement.textContent='SIU';">
+          </div>
           <div class="exp-meta">2024 – 2026 · MBA Marketing</div>
           <h3>Symbiosis</h3>
           <p>Building deeper frameworks in consumer behavior, brand strategy, marketing analytics, and B2B sales.</p>
@@ -1713,20 +1714,17 @@ button {
   </div>
 </section>
 
-<!-- WORK -->
 <section class="work" id="work">
   <div class="container">
     <div class="reveal">
       <div class="eyebrow">Featured work</div>
-      <h2 class="section-title">Three growth problems. Three different engines.</h2>
-      <p class="section-sub">
-        Marketplace liquidity, category trust, and partner activation — each required a different mix of strategy, execution, experimentation, and measurement.
-      </p>
+      <h2 class="section-title">Four growth problems. Four different engines.</h2>
+      <p class="section-sub">Marketplace liquidity, category trust, partner activation, and B2B GTM positioning — each required a different mix of strategy, execution, experimentation, and measurement.</p>
     </div>
 
     <div class="case-stack">
 
-      <!-- CASE 1 -->
+      <!-- AEROHYRE -->
       <article class="case-card reveal">
         <div class="case-inner">
           <div class="case-visual blue">
@@ -1735,9 +1733,13 @@ button {
             <div class="mock-dashboard">
               <div class="mock-top">
                 <span>MAU curve</span>
-                <span>Month 0 → 6</span>
+                <span>Month 0 → 11</span>
               </div>
               <div class="mock-num">165K+</div>
+              <div class="chart-caption-row">
+                <span>Jun 2023 – May 2024</span>
+                <span>₹12–18L/month avg spend</span>
+              </div>
               <div class="mock-chart">
                 <svg viewBox="0 0 500 160" preserveAspectRatio="none">
                   <path d="M0,135 C60,132 90,122 130,110 C178,96 195,90 240,78 C290,65 320,42 370,35 C420,27 455,18 500,10"
@@ -1749,156 +1751,98 @@ button {
             </div>
 
             <div class="visual-mini-grid">
-              <div class="visual-mini">
-                <strong>8K+</strong>
-                <span>Sign-ups</span>
-              </div>
-              <div class="visual-mini">
-                <strong>3.1×</strong>
-                <span>Peak ROAS</span>
-              </div>
-              <div class="visual-mini">
-                <strong>~2.1×</strong>
-                <span>CVR lift</span>
-              </div>
+              <div class="visual-mini"><strong>8K+</strong><span>Sign-ups</span></div>
+              <div class="visual-mini"><strong>3.1×</strong><span>Peak ROAS</span></div>
+              <div class="visual-mini"><strong>~2.1×</strong><span>CVR lift</span></div>
             </div>
           </div>
 
           <div class="case-content">
             <div class="case-kicker">Case study 01 · Aerohyre</div>
             <h3>Building India’s aviation hiring growth engine from zero.</h3>
-            <p class="case-lede">
-              Scaled a first-mover aviation job platform from 0 to 165K+ MAUs by building the acquisition, analytics, SEO, and CRO engine from scratch.
-            </p>
+            <p class="case-lede">Scaled a first-mover aviation job platform from 0 to 165K+ MAUs in 11 months by building the acquisition, analytics, SEO, and CRO engine from scratch.</p>
 
             <div class="snapshot">
-              <div>
-                <span>Challenge</span>
-                <strong>No category awareness, no historical CAC, marketplace cold start.</strong>
-              </div>
-              <div>
-                <span>Strategy</span>
-                <strong>Acquire job seekers first, build trust, then scale acquisition.</strong>
-              </div>
-              <div>
-                <span>Outcome</span>
-                <strong>165K+ MAUs, 8K+ sign-ups, improved ROAS and CAC.</strong>
-              </div>
+              <div><span>Challenge</span><strong>No category awareness, no historical CAC, marketplace cold start.</strong></div>
+              <div><span>Strategy</span><strong>Acquire job seekers first, build trust, then scale acquisition.</strong></div>
+              <div><span>Outcome</span><strong>165K+ MAUs, 8K+ sign-ups, improved ROAS and CAC.</strong></div>
             </div>
 
             <div class="case-details">
-              <div class="detail-row">
-                <h4>Business problem</h4>
-                <p>Aerohyre was not just launching a product — it was creating a category. Aviation hiring was fragmented across generic job boards, referrals, and informal networks.</p>
-              </div>
-              <div class="detail-row">
-                <h4>My thinking</h4>
-                <p>The key decision was sequencing. I focused first on candidate liquidity because job-seeker traction would become the proof needed to later acquire employers.</p>
-              </div>
-              <div class="detail-row">
-                <h4>Execution</h4>
-                <p>Google Search, Meta, YouTube, retargeting, SEO landing pages, role-specific messaging, GA4/GTM tracking, UTM discipline, and weekly funnel reporting.</p>
-              </div>
-              <div class="detail-row">
-                <h4>Experiments</h4>
-                <p>CTA copy, search match types, form simplification, role-specific landing pages, and retargeting sequences.</p>
-              </div>
-              <div class="detail-row">
-                <h4>What failed</h4>
-                <p>Broad-match keywords wasted spend early. Generic job-portal messaging felt undifferentiated. Cold campaigns without retargeting underperformed.</p>
-              </div>
+              <div class="detail-row"><h4>Business problem</h4><p>Aerohyre was not just launching a product — it was creating a category. Aviation hiring was fragmented across generic job boards, referrals, and informal networks.</p></div>
+              <div class="detail-row"><h4>My thinking</h4><p>The key decision was sequencing. I focused first on candidate liquidity because job-seeker traction would become the proof needed to later acquire employers.</p></div>
+              <div class="detail-row"><h4>Execution</h4><p>Google Search, Meta, YouTube, retargeting, SEO landing pages, role-specific messaging, GA4/GTM tracking, UTM discipline, and weekly funnel reporting.</p></div>
+              <div class="detail-row"><h4>What failed</h4><p>Broad-match keywords wasted spend early. Generic job-portal messaging felt undifferentiated. Cold campaigns without retargeting underperformed.</p></div>
             </div>
 
             <div class="result-row">
-              <span class="result-pill">165K+ MAUs</span>
+              <span class="result-pill">165K+ MAUs in 11 months</span>
               <span class="result-pill">8K+ sign-ups</span>
               <span class="result-pill">3.1× ROAS</span>
               <span class="result-pill">CAC optimization</span>
+            </div>
+
+            <div class="final-proof-block">
+              <div class="final-proof-label">MAU growth trajectory · Month 0 → 11</div>
+              <div class="mau-bar-chart">
+                <div class="mau-bar-item"><div class="mau-value">2K</div><div class="mau-bar" style="height:2%;"></div><div class="mau-month">M1</div></div>
+                <div class="mau-bar-item"><div class="mau-value">6K</div><div class="mau-bar" style="height:5%;"></div><div class="mau-month">M2</div></div>
+                <div class="mau-bar-item"><div class="mau-value">14K</div><div class="mau-bar" style="height:10%;"></div><div class="mau-month">M3</div></div>
+                <div class="mau-bar-item"><div class="mau-value">28K</div><div class="mau-bar" style="height:17%;"></div><div class="mau-month">M4</div></div>
+                <div class="mau-bar-item"><div class="mau-value">52K</div><div class="mau-bar" style="height:32%;"></div><div class="mau-month">M5</div></div>
+                <div class="mau-bar-item"><div class="mau-value">78K</div><div class="mau-bar" style="height:47%;"></div><div class="mau-month">M6</div></div>
+                <div class="mau-bar-item"><div class="mau-value">100K</div><div class="mau-bar" style="height:60%;"></div><div class="mau-month">M7</div></div>
+                <div class="mau-bar-item"><div class="mau-value">120K</div><div class="mau-bar" style="height:72%;"></div><div class="mau-month">M8</div></div>
+                <div class="mau-bar-item"><div class="mau-value">140K</div><div class="mau-bar" style="height:84%;"></div><div class="mau-month">M9</div></div>
+                <div class="mau-bar-item"><div class="mau-value">158K</div><div class="mau-bar" style="height:94%;"></div><div class="mau-month">M10</div></div>
+                <div class="mau-bar-item"><div class="mau-value">165K+</div><div class="mau-bar" style="height:100%;"></div><div class="mau-month">M11</div></div>
+              </div>
+              <div class="chart-note">Inflection at Month 5 corresponds to shift from broad-match to phrase/exact match + retargeting layer.</div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- CASE 2 -->
+      <!-- QLED -->
       <article class="case-card reveal">
         <div class="case-inner">
           <div class="case-visual">
             <div class="visual-label">Creator launch system</div>
 
+            <div class="brand-image-row">
+              <img src="Super Plastronics tv 1 JPEG.jpeg" alt="QLED campaign creative">
+              <img src="Super Plastronics TV 2 JPEG.jpeg" alt="QLED TV launch creative">
+            </div>
+
             <div class="creator-wall">
-              <div class="creator-thumb">Tech</div>
-              <div class="creator-thumb">Review</div>
-              <div class="creator-thumb">Home</div>
-              <div class="creator-thumb">Demo</div>
-              <div class="creator-thumb">QLED</div>
-              <div class="creator-thumb">YT</div>
-              <div class="creator-thumb">Meta</div>
-              <div class="creator-thumb">UGC</div>
-              <div class="creator-thumb">Offer</div>
-              <div class="creator-thumb">Setup</div>
-              <div class="creator-thumb">TV</div>
-              <div class="creator-thumb">Launch</div>
+              <div class="creator-thumb">Tech</div><div class="creator-thumb">Review</div><div class="creator-thumb">Home</div><div class="creator-thumb">Demo</div>
+              <div class="creator-thumb">QLED</div><div class="creator-thumb">YT</div><div class="creator-thumb">Meta</div><div class="creator-thumb">UGC</div>
+              <div class="creator-thumb">Offer</div><div class="creator-thumb">Setup</div><div class="creator-thumb">TV</div><div class="creator-thumb">Launch</div>
             </div>
 
             <div class="visual-mini-grid">
-              <div class="visual-mini">
-                <strong>100+</strong>
-                <span>Creators</span>
-              </div>
-              <div class="visual-mini">
-                <strong>12M+</strong>
-                <span>Impressions</span>
-              </div>
-              <div class="visual-mini">
-                <strong>22%</strong>
-                <span>Sales uplift</span>
-              </div>
+              <div class="visual-mini"><strong>100+</strong><span>Creators</span></div>
+              <div class="visual-mini"><strong>12M+</strong><span>Impressions</span></div>
+              <div class="visual-mini"><strong>22%</strong><span>Sales uplift</span></div>
             </div>
           </div>
 
           <div class="case-content">
             <div class="case-kicker">Case study 02 · Google QLED TV</div>
             <h3>Launching Google QLED TV with creators + performance marketing.</h3>
-            <p class="case-lede">
-              Built a launch motion using creator-led trust and performance retargeting to drive visibility, qualified traffic, and online sales uplift.
-            </p>
+            <p class="case-lede">Built a launch motion using creator-led trust and performance retargeting to drive visibility, qualified traffic, and online sales uplift.</p>
 
             <div class="snapshot">
-              <div>
-                <span>Challenge</span>
-                <strong>Compete against Samsung/LG-level trust with a smaller budget.</strong>
-              </div>
-              <div>
-                <span>Strategy</span>
-                <strong>Use creators to build trust first, then retarget warm audiences.</strong>
-              </div>
-              <div>
-                <span>Outcome</span>
-                <strong>100+ creators, 12M+ impressions, 180K+ visits, 22% sales uplift.</strong>
-              </div>
+              <div><span>Challenge</span><strong>Compete against Samsung/LG-level trust with a smaller budget.</strong></div>
+              <div><span>Strategy</span><strong>Use creators to build trust first, then retarget warm audiences.</strong></div>
+              <div><span>Outcome</span><strong>100+ creators, 12M+ impressions, 180K+ visits, 22% sales uplift.</strong></div>
             </div>
 
             <div class="case-details">
-              <div class="detail-row">
-                <h4>Business problem</h4>
-                <p>The product had a strong value proposition, but the category was trust-heavy. Consumers already associated QLED with larger brands.</p>
-              </div>
-              <div class="detail-row">
-                <h4>My thinking</h4>
-                <p>For a high-consideration TV purchase, performance ads alone would not solve the trust gap. The better sequence was creator education first, retargeting second.</p>
-              </div>
-              <div class="detail-row">
-                <h4>Execution</h4>
-                <p>Creator tiers, review-led briefs, product demos, performance retargeting, offer-led CTAs, marketplace-led conversion paths, and launch reporting.</p>
-              </div>
-              <div class="detail-row">
-                <h4>Experiments</h4>
-                <p>Creator format, creator tier mix, retargeting creative, CTA copy, and destination testing between brand site and marketplace journeys.</p>
-              </div>
-              <div class="detail-row">
-                <h4>What failed</h4>
-                <p>Large creators did not always produce the best traffic. Feature-only ads lacked trust. Attribution was not perfectly linear.</p>
-              </div>
+              <div class="detail-row"><h4>Business problem</h4><p>The product had a strong value proposition, but the category was trust-heavy. Consumers already associated QLED with larger brands.</p></div>
+              <div class="detail-row"><h4>My thinking</h4><p>For a high-consideration TV purchase, performance ads alone would not solve the trust gap. The better sequence was creator education first, retargeting second.</p></div>
+              <div class="detail-row"><h4>Execution</h4><p>Creator tiers, review-led briefs, product demos, performance retargeting, offer-led CTAs, marketplace-led conversion paths, and launch reporting.</p></div>
+              <div class="detail-row"><h4>What failed</h4><p>Large creators did not always produce the best traffic. Feature-only ads lacked trust. Attribution was not perfectly linear.</p></div>
             </div>
 
             <div class="result-row">
@@ -1907,11 +1851,20 @@ button {
               <span class="result-pill">180K+ visits</span>
               <span class="result-pill">22% sales uplift</span>
             </div>
+
+            <div class="final-proof-block">
+              <div class="final-proof-label">Creator program breakdown · 100+ total</div>
+              <div class="creator-tier-grid">
+                <div class="creator-tier-card"><strong>60+</strong><h5>Nano creators</h5><p>10K–50K followers · highest engagement and strongest authenticity for product discovery.</p></div>
+                <div class="creator-tier-card"><strong>30+</strong><h5>Micro creators</h5><p>50K–200K followers · best purchase intent and stronger audience-product fit.</p></div>
+                <div class="creator-tier-card"><strong>10+</strong><h5>Mid-tier creators</h5><p>200K–1M followers · brand awareness lift and credibility at launch scale.</p></div>
+              </div>
+            </div>
           </div>
         </div>
       </article>
 
-      <!-- CASE 3 -->
+      <!-- CASHIFY -->
       <article class="case-card reveal">
         <div class="case-inner">
           <div class="case-visual gold">
@@ -1926,71 +1879,100 @@ button {
             </div>
 
             <div class="visual-mini-grid">
-              <div class="visual-mini">
-                <strong>₹12L+</strong>
-                <span>Monthly revenue</span>
-              </div>
-              <div class="visual-mini">
-                <strong>22%</strong>
-                <span>Uplift</span>
-              </div>
-              <div class="visual-mini">
-                <strong>30M+</strong>
-                <span>Impressions</span>
-              </div>
+              <div class="visual-mini"><strong>₹12L+</strong><span>Monthly revenue</span></div>
+              <div class="visual-mini"><strong>22%</strong><span>Uplift</span></div>
+              <div class="visual-mini"><strong>30M+</strong><span>Impressions</span></div>
             </div>
           </div>
 
           <div class="case-content">
             <div class="case-kicker">Case study 03 · Cashify</div>
             <h3>Turning Cashify’s affiliate ecosystem into a growth channel.</h3>
-            <p class="case-lede">
-              Improved partner-led revenue through account segmentation, creator activation, offer coordination, and affiliate campaign discipline.
-            </p>
+            <p class="case-lede">The affiliate program had 50+ partners, but revenue was unevenly distributed. Growth was not a partner acquisition problem — it was an activation and prioritization problem.</p>
 
             <div class="snapshot">
-              <div>
-                <span>Challenge</span>
-                <strong>Affiliate revenue was active but under-optimized.</strong>
-              </div>
-              <div>
-                <span>Strategy</span>
-                <strong>Segment partners, activate creators, improve campaign rhythm.</strong>
-              </div>
-              <div>
-                <span>Outcome</span>
-                <strong>₹12L+ monthly revenue, 22% uplift, 40% lift in partner-acquired customers.</strong>
-              </div>
+              <div><span>Challenge</span><strong>Bottom 60% of accounts contributed less than 15% of total revenue.</strong></div>
+              <div><span>Strategy</span><strong>Segment partners like an ABM target list and prioritize headroom.</strong></div>
+              <div><span>Outcome</span><strong>22% uplift primarily from 8 under-supported existing accounts.</strong></div>
             </div>
 
             <div class="case-details">
-              <div class="detail-row">
-                <h4>Business problem</h4>
-                <p>Cashify had a large partner ecosystem, but not every partner was equally activated. The growth opportunity was improving output from the existing base.</p>
-              </div>
-              <div class="detail-row">
-                <h4>My thinking</h4>
-                <p>I treated affiliate growth like account-based growth: identify which partners had headroom, which needed reactivation, and where creators could reduce trust friction.</p>
-              </div>
-              <div class="detail-row">
-                <h4>Execution</h4>
-                <p>Partner segmentation, creator outreach, offer-led campaigns, seasonal pushes, reporting, partner follow-ups, and revenue tracking.</p>
-              </div>
-              <div class="detail-row">
-                <h4>Experiments</h4>
-                <p>Partner upsell campaigns, creator explainer content, dormant partner reactivation, incentive variation, and seasonal campaign pushes.</p>
-              </div>
-              <div class="detail-row">
-                <h4>What failed</h4>
-                <p>Generic partner outreach had weak response. Some creators drove reach but not quality. Too many low-potential accounts diluted attention.</p>
-              </div>
+              <div class="detail-row"><h4>The real problem</h4><p>The affiliate program had 50+ partners but revenue was unevenly distributed — the bottom 60% of accounts contributed less than 15% of total revenue. Growth wasn't a partner acquisition problem, it was an activation and prioritization problem.</p></div>
+              <div class="detail-row"><h4>The insight</h4><p>I treated the affiliate base like an ABM target list. Segmented all 50+ partners into three tiers by revenue headroom. Tier 1 got dedicated support cadence, tailored offers, and creator content to reduce audience trust friction. Dormant accounts got personalized reactivation outreach that referenced their specific last performance gap — not a batch email.</p></div>
+              <div class="detail-row"><h4>Execution</h4><p>Built partner tiers, prioritized accounts by revenue headroom, created tailored offer pushes, supported creator-led trust content, and maintained structured follow-up cadences for high-potential accounts.</p></div>
+              <div class="detail-row"><h4>What failed</h4><p>Generic partner outreach had near-zero response. Batch commission update emails didn't move anyone. What worked was treating every reactivation like a sales motion — specific, referenced, and tied to a clear next action.</p></div>
+              <div class="detail-row"><h4>Outcome</h4><p>The 22% revenue uplift came primarily from 8 existing accounts that had been under-supported, not from signing new partners.</p></div>
             </div>
 
             <div class="result-row">
               <span class="result-pill">₹12L+ monthly revenue</span>
               <span class="result-pill">22% uplift</span>
               <span class="result-pill">30M+ impressions</span>
-              <span class="result-pill">50+ accounts</span>
+              <span class="result-pill">8 accounts drove uplift</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TYROO -->
+      <article class="case-card reveal">
+        <div class="case-inner">
+          <div class="case-visual blue">
+            <div class="visual-label">B2B AdTech GTM system</div>
+
+            <div class="mock-dashboard">
+              <div class="mock-top">
+                <span>SEO-led GTM</span>
+                <span>APAC verticals</span>
+              </div>
+
+              <div class="mock-num">85+</div>
+
+              <div class="chart-caption-row">
+                <span>Keywords ranked</span>
+                <span>$250K+ pipeline influenced</span>
+              </div>
+
+              <div class="tyroo-visual-grid">
+                <div class="tyroo-card"><span>Vertical</span><strong>BFSI</strong><p>Compliance-heavy buyer pain points and performance trust signals.</p></div>
+                <div class="tyroo-card"><span>Vertical</span><strong>Retail</strong><p>Customer acquisition, retargeting, and commerce media narratives.</p></div>
+                <div class="tyroo-card"><span>Vertical</span><strong>Gaming</strong><p>User acquisition, engagement, and regional scale positioning.</p></div>
+                <div class="tyroo-card"><span>Sales asset</span><strong>GTM</strong><p>Every page mapped keyword intent to a sales conversation angle.</p></div>
+              </div>
+            </div>
+
+            <div class="tyroo-cluster">
+              <span>85+ keywords ranked</span>
+              <span>$250K+ pipeline influenced</span>
+              <span>BFSI</span>
+              <span>Retail</span>
+              <span>Gaming</span>
+            </div>
+          </div>
+
+          <div class="case-content">
+            <div class="case-kicker">Case study 04 · Tyroo · AdTech · B2B</div>
+            <h3>Building SEO-led GTM positioning for a B2B AdTech platform across APAC.</h3>
+            <p class="case-lede">B2B AdTech content either over-indexes on technical jargon or is too generic to differentiate. The gap was content that could both rank for buying-intent keywords and give the sales team something credible to use in pipeline conversations across BFSI, Retail, and Gaming verticals.</p>
+
+            <div class="snapshot">
+              <div><span>Challenge</span><strong>Differentiate B2B AdTech content beyond jargon and generic thought leadership.</strong></div>
+              <div><span>Strategy</span><strong>Build keyword clusters mapped to vertical-specific buyer pain points.</strong></div>
+              <div><span>Outcome</span><strong>85+ keywords ranked and $250K+ pipeline influenced.</strong></div>
+            </div>
+
+            <div class="case-details">
+              <div class="detail-row"><h4>The challenge</h4><p>B2B AdTech content either over-indexes on technical jargon or is too generic to differentiate. The gap was content that could both rank for buying-intent keywords and give the sales team something credible to use in pipeline conversations across BFSI, Retail, and Gaming verticals.</p></div>
+              <div class="detail-row"><h4>The execution</h4><p>Audited content gaps versus competitors. Built vertical-specific keyword clusters for each APAC industry segment. Developed positioning frameworks that mapped Tyroo's capabilities to specific buyer pain points per vertical. Prioritized pages by pipeline contribution potential, not just search volume.</p></div>
+              <div class="detail-row"><h4>The insight</h4><p>B2B content fails when marketing and sales treat it separately. Every piece I built had both a keyword target and a sales-angle annotation — so it became a shared asset, not a marketing deliverable that sales ignored.</p></div>
+            </div>
+
+            <div class="result-row">
+              <span class="result-pill">85+ keywords ranked</span>
+              <span class="result-pill">$250K+ pipeline influenced</span>
+              <span class="result-pill">BFSI</span>
+              <span class="result-pill">Retail</span>
+              <span class="result-pill">Gaming</span>
             </div>
           </div>
         </div>
@@ -2000,48 +1982,24 @@ button {
   </div>
 </section>
 
-<!-- GROWTH SYSTEM -->
 <section class="section" id="system">
   <div class="container">
     <div class="reveal">
       <div class="eyebrow">Operating system</div>
       <h2 class="section-title">How I approach growth.</h2>
-      <p class="section-sub">
-        I don’t think of growth as running campaigns. I think of it as building a system: find the constraint, choose the audience, design the funnel, test the message, read the data, then scale what survives.
-      </p>
+      <p class="section-sub">I don’t think of growth as running campaigns. I think of it as building a system: find the constraint, choose the audience, design the funnel, test the message, read the data, then scale what survives.</p>
     </div>
 
     <div class="system-grid">
-      <div class="system-step reveal">
-        <span>01</span>
-        <h3>Diagnose</h3>
-        <p>Find the actual constraint: awareness, conversion, trust, retention, CAC, or repeatability.</p>
-      </div>
-      <div class="system-step reveal">
-        <span>02</span>
-        <h3>Segment</h3>
-        <p>Define ICPs, intent levels, audience quality, and buyer motivation.</p>
-      </div>
-      <div class="system-step reveal">
-        <span>03</span>
-        <h3>Build</h3>
-        <p>Create the funnel, message, landing journey, tracking, and reporting structure.</p>
-      </div>
-      <div class="system-step reveal">
-        <span>04</span>
-        <h3>Experiment</h3>
-        <p>Run controlled tests across channels, creative, offers, audiences, and CRO.</p>
-      </div>
-      <div class="system-step reveal">
-        <span>05</span>
-        <h3>Scale</h3>
-        <p>Move budget and effort toward what proves repeatable enough to fund.</p>
-      </div>
+      <div class="system-step reveal"><span>01</span><h3>Diagnose</h3><p>Find the actual constraint: awareness, conversion, trust, retention, CAC, or repeatability.</p></div>
+      <div class="system-step reveal"><span>02</span><h3>Segment</h3><p>Define ICPs, intent levels, audience quality, and buyer motivation.</p></div>
+      <div class="system-step reveal"><span>03</span><h3>Build</h3><p>Create the funnel, message, landing journey, tracking, and reporting structure.</p></div>
+      <div class="system-step reveal"><span>04</span><h3>Experiment</h3><p>Run controlled tests across channels, creative, offers, audiences, and CRO.</p></div>
+      <div class="system-step reveal"><span>05</span><h3>Scale</h3><p>Move budget and effort toward what proves repeatable enough to fund.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CAPABILITIES -->
 <section class="section" id="capabilities">
   <div class="container">
     <div class="reveal">
@@ -2050,52 +2008,16 @@ button {
     </div>
 
     <div class="cap-grid">
-      <div class="cap-card reveal">
-        <div class="cap-icon">↗</div>
-        <h3>Performance Marketing</h3>
-        <p>Paid acquisition systems, budget allocation, channel testing, CAC optimization, and ROAS-focused reporting.</p>
-        <div class="tool-line">Google Ads · Meta Ads · YouTube · Amazon Ads</div>
-      </div>
-
-      <div class="cap-card reveal">
-        <div class="cap-icon">▦</div>
-        <h3>Analytics & CRO</h3>
-        <p>Tracking setup, UTM discipline, funnel dashboards, landing-page tests, and conversion-rate improvements.</p>
-        <div class="tool-line">GA4 · GTM · Looker · Power BI</div>
-      </div>
-
-      <div class="cap-card reveal">
-        <div class="cap-icon">◎</div>
-        <h3>GTM & Positioning</h3>
-        <p>Audience segmentation, messaging, launch sequencing, category education, and founder-friendly business reporting.</p>
-        <div class="tool-line">ICP · Funnels · Messaging · GTM</div>
-      </div>
-
-      <div class="cap-card reveal">
-        <div class="cap-icon">◐</div>
-        <h3>Creator-led Launches</h3>
-        <p>Influencer strategy, creator briefs, content coordination, product storytelling, and performance retargeting.</p>
-        <div class="tool-line">Creators · UGC · Briefs · Launches</div>
-      </div>
-
-      <div class="cap-card reveal">
-        <div class="cap-icon">⌁</div>
-        <h3>SEO & Content</h3>
-        <p>Search-led landing pages, content clusters, keyword audits, organic acquisition, and category-building content.</p>
-        <div class="tool-line">SEMrush · Ahrefs · GSC · Screaming Frog</div>
-      </div>
-
-      <div class="cap-card reveal">
-        <div class="cap-icon">◇</div>
-        <h3>Partnership Growth</h3>
-        <p>Affiliate activation, creator partnerships, partner segmentation, account follow-ups, and campaign operating rhythm.</p>
-        <div class="tool-line">Affiliate · KAM · Creators · Partners</div>
-      </div>
+      <div class="cap-card reveal"><div class="cap-icon">↗</div><h3>Performance Marketing</h3><p>Paid acquisition systems, budget allocation, channel testing, CAC optimization, and ROAS-focused reporting.</p><div class="tool-line">Google Ads · Meta Ads · YouTube · Amazon Ads</div></div>
+      <div class="cap-card reveal"><div class="cap-icon">▦</div><h3>Analytics & CRO</h3><p>Tracking setup, UTM discipline, funnel dashboards, landing-page tests, and conversion-rate improvements.</p><div class="tool-line">GA4 · GTM · Looker · Power BI</div></div>
+      <div class="cap-card reveal"><div class="cap-icon">◎</div><h3>GTM & Positioning</h3><p>Audience segmentation, messaging, launch sequencing, category education, and founder-friendly business reporting.</p><div class="tool-line">ICP · Funnels · Messaging · GTM</div></div>
+      <div class="cap-card reveal"><div class="cap-icon">◐</div><h3>Creator-led Launches</h3><p>Influencer strategy, creator briefs, content coordination, product storytelling, and performance retargeting.</p><div class="tool-line">Creators · UGC · Briefs · Launches</div></div>
+      <div class="cap-card reveal"><div class="cap-icon">⌁</div><h3>SEO & Content</h3><p>Search-led landing pages, content clusters, keyword audits, organic acquisition, and category-building content.</p><div class="tool-line">SEMrush · Ahrefs · GSC · Screaming Frog</div></div>
+      <div class="cap-card reveal"><div class="cap-icon">◇</div><h3>Partnership Growth</h3><p>Affiliate activation, creator partnerships, partner segmentation, account follow-ups, and campaign operating rhythm.</p><div class="tool-line">Affiliate · KAM · Creators · Partners</div></div>
     </div>
   </div>
 </section>
 
-<!-- SHORTLIST -->
 <section class="section shortlist">
   <div class="container">
     <div class="reveal">
@@ -2104,67 +2026,33 @@ button {
     </div>
 
     <div class="shortlist-grid">
-      <div class="short-card reveal">
-        <span>01</span>
-        <h3>Full-funnel exposure</h3>
-        <p>Awareness, creators, paid acquisition, CRO, retention, partnerships, and reporting.</p>
-      </div>
-
-      <div class="short-card reveal">
-        <span>02</span>
-        <h3>Comfort with messy data</h3>
-        <p>Built growth systems in early-stage environments without perfect historical dashboards.</p>
-      </div>
-
-      <div class="short-card reveal">
-        <span>03</span>
-        <h3>Brand + performance</h3>
-        <p>Can connect trust-building activity to funnel efficiency and revenue outcomes.</p>
-      </div>
-
-      <div class="short-card reveal">
-        <span>04</span>
-        <h3>Founder-facing mindset</h3>
-        <p>Translate marketing metrics into business language: CAC, CVR, ROAS, pipeline, growth quality.</p>
-      </div>
+      <div class="short-card reveal"><span>01</span><h3>Full-funnel exposure</h3><p>Awareness, creators, paid acquisition, CRO, retention, partnerships, and reporting.</p></div>
+      <div class="short-card reveal"><span>02</span><h3>Comfort with messy data</h3><p>Built growth systems in early-stage environments without perfect historical dashboards.</p></div>
+      <div class="short-card reveal"><span>03</span><h3>Brand + performance</h3><p>Can connect trust-building activity to funnel efficiency and revenue outcomes.</p></div>
+      <div class="short-card reveal"><span>04</span><h3>Founder-facing mindset</h3><p>Translate marketing metrics into business language: CAC, CVR, ROAS, pipeline, growth quality.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
     <div class="contact-card reveal">
       <div>
         <h2>Looking for a growth marketer who can own the number?</h2>
-        <p>
-          I’m open to Growth Marketing, GTM, Performance Marketing, and Founder’s Office roles — especially at startups, D2C brands, consumer tech, re-commerce, and companies where marketing is expected to move revenue.
-        </p>
+        <p>I’m open to Growth Marketing, GTM, Performance Marketing, and Founder’s Office roles — especially at startups, D2C brands, consumer tech, re-commerce, and companies where marketing is expected to move revenue.</p>
 
         <div class="contact-actions">
           <a class="btn btn-primary" href="mailto:abhishekkpal1998@gmail.com">Email me</a>
-          <a class="btn btn-secondary" href="#" target="_blank">Download resume ↗</a>
-          <a class="btn btn-secondary" href="https://linkedin.com" target="_blank">LinkedIn ↗</a>
+          <a class="btn btn-secondary" href="resume.pdf.pdf" target="_blank" rel="noopener noreferrer">Download resume ↗</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/abhishek-pal-1292971a5/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </div>
       </div>
 
       <div class="contact-info">
-        <div>
-          <span>Email</span>
-          <strong>abhishekkpal1998@gmail.com</strong>
-        </div>
-        <div>
-          <span>Phone</span>
-          <strong>+91 97179 24846</strong>
-        </div>
-        <div>
-          <span>Location</span>
-          <strong>New Delhi, India</strong>
-        </div>
-        <div>
-          <span>Availability</span>
-          <strong>Open to full-time roles</strong>
-        </div>
+        <div><span>Email</span><strong>abhishekkpal1998@gmail.com</strong></div>
+        <div><span>Phone</span><strong>+91 97179 24846</strong></div>
+        <div><span>Location</span><strong>New Delhi, India</strong></div>
+        <div><span>Availability</span><strong>Open to full-time roles</strong></div>
       </div>
     </div>
   </div>
@@ -2172,28 +2060,19 @@ button {
 
 <footer class="footer">
   <div class="container footer-inner">
-    <span>© 2026 Abhishek Pal · Built as a single-page growth portfolio</span>
+    <span>© 2026 Abhishek Pal · Single-page growth portfolio</span>
     <span>Growth Marketing · GTM · Performance</span>
   </div>
 </footer>
 
 <script>
-/* =========================================================
-   SCROLL PROGRESS
-========================================================= */
-
 const progress = document.getElementById("progress");
 
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
-  const progressWidth = (scrollTop / docHeight) * 100;
-  progress.style.width = progressWidth + "%";
+  progress.style.width = (scrollTop / docHeight) * 100 + "%";
 });
-
-/* =========================================================
-   REVEAL ON SCROLL
-========================================================= */
 
 const revealEls = document.querySelectorAll(".reveal");
 
@@ -2206,2825 +2085,11 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  {
-    threshold: 0.12
-  }
+  { threshold: 0.12 }
 );
 
 revealEls.forEach(el => observer.observe(el));
-
-/* =========================================================
-   COPY EMAIL OPTIONAL
-========================================================= */
-
-function copyEmail() {
-  navigator.clipboard.writeText("abhishekkpal1998@gmail.com");
-  alert("Email copied");
-}
 </script>
-<!-- FINAL PORTFOLIO ASSET + LINK UPDATES -->
-<style>
-/* Resume / LinkedIn / Brand asset updates */
 
-.logo-img {
-  background: rgba(255,255,255,0.92) !important;
-  padding: 7px !important;
-  width: 82px !important;
-  height: 52px !important;
-  overflow: hidden;
-}
-
-.logo-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.brand-image-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 16px 0;
-}
-
-.brand-image-row img {
-  width: 100%;
-  height: 92px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.16);
-}
-
-.qled-visuals {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 18px 0;
-}
-
-.qled-visuals img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-card);
-}
-
-.aerohyre-logo-card {
-  background: rgba(255,255,255,0.72);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-}
-
-.aerohyre-logo-card img {
-  max-width: 180px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-@media (max-width: 620px) {
-  .brand-image-row,
-  .qled-visuals {
-    grid-template-columns: 1fr;
-  }
-
-  .brand-image-row img,
-  .qled-visuals img {
-    height: 150px;
-  }
-}
-</style>
-
-<script>
-/* =========================================================
-   FINAL PORTFOLIO UPDATES
-   Resume, LinkedIn, logos, and campaign images
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-  const resumeFile = "resume.pdf.pdf";
-  const linkedInUrl = "https://www.linkedin.com/in/abhishek-pal-1292971a5/";
-
-  const cashifyLogo = "Cashify logo PNG.png";
-  const tyrooLogo = "Tyroo logo PNG.png";
-  const aerohyreLogo = "aerohyre logo PNG.jpg";
-
-  const superPlastronicsImg1 = "Super Plastronics tv 1 JPEG.jpeg";
-  const superPlastronicsImg2 = "Super Plastronics TV 2 JPEG.jpeg";
-
-  /* 1. Update all Resume / Download Resume buttons */
-  document.querySelectorAll("a").forEach(function (link) {
-    const text = link.textContent.toLowerCase();
-
-    if (text.includes("resume")) {
-      link.setAttribute("href", resumeFile);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-
-    if (text.includes("linkedin")) {
-      link.setAttribute("href", linkedInUrl);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-  });
-
-  /* 2. Helper function to replace experience logos */
-  function replaceLogo(companyTitle, imageSrc, altText) {
-    const cards = document.querySelectorAll(".exp-card");
-
-    cards.forEach(function (card) {
-      const heading = card.querySelector("h3");
-
-      if (heading && heading.textContent.trim().toLowerCase() === companyTitle.toLowerCase()) {
-        const logo = card.querySelector(".exp-logo");
-
-        if (logo) {
-          logo.classList.add("logo-img");
-          logo.innerHTML = `<img src="${imageSrc}" alt="${altText}">`;
-        }
-      }
-    });
-  }
-
-  replaceLogo("Aerohyre", aerohyreLogo, "Aerohyre logo");
-  replaceLogo("Cashify", cashifyLogo, "Cashify logo");
-  replaceLogo("Tyroo", tyrooLogo, "Tyroo logo");
-
-  /* 3. Add Super Plastronics TV images inside experience card */
-  document.querySelectorAll(".exp-card").forEach(function (card) {
-    const heading = card.querySelector("h3");
-
-    if (heading && heading.textContent.trim().toLowerCase() === "super plastronics") {
-      if (!card.querySelector(".brand-image-row")) {
-        const paragraph = card.querySelector("p");
-
-        if (paragraph) {
-          const imageRow = document.createElement("div");
-          imageRow.className = "brand-image-row";
-          imageRow.innerHTML = `
-            <img src="${superPlastronicsImg1}" alt="Super Plastronics QLED TV campaign visual">
-            <img src="${superPlastronicsImg2}" alt="Super Plastronics QLED TV launch visual">
-          `;
-
-          paragraph.parentNode.insertBefore(imageRow, paragraph);
-        }
-      }
-    }
-  });
-
-  /* 4. Add Aerohyre logo inside Aerohyre case study visual */
-  document.querySelectorAll(".case-visual").forEach(function (visual) {
-    const label = visual.querySelector(".visual-label");
-
-    if (
-      label &&
-      label.textContent.toLowerCase().includes("aviation growth dashboard") &&
-      !visual.querySelector(".aerohyre-logo-card")
-    ) {
-      const logoCard = document.createElement("div");
-      logoCard.className = "aerohyre-logo-card";
-      logoCard.innerHTML = `<img src="${aerohyreLogo}" alt="Aerohyre logo">`;
-
-      label.insertAdjacentElement("afterend", logoCard);
-    }
-  });
-
-  /* 5. Add Super Plastronics TV images inside Google QLED case study */
-  document.querySelectorAll(".case-visual").forEach(function (visual) {
-    const label = visual.querySelector(".visual-label");
-
-    if (
-      label &&
-      label.textContent.toLowerCase().includes("creator launch system") &&
-      !visual.querySelector(".qled-visuals")
-    ) {
-      const creatorWall = visual.querySelector(".creator-wall");
-
-      if (creatorWall) {
-        const qledVisuals = document.createElement("div");
-        qledVisuals.className = "qled-visuals";
-        qledVisuals.innerHTML = `
-          <img src="${superPlastronicsImg1}" alt="QLED campaign creative">
-          <img src="${superPlastronicsImg2}" alt="QLED TV launch creative">
-        `;
-
-        creatorWall.parentNode.insertBefore(qledVisuals, creatorWall);
-      }
-    }
-  });
-});
-</script>
-   <!-- FINAL DATA VISUALS FOR CASE STUDIES -->
-<style>
-/* =========================================================
-   CASE STUDY DATA VISUALS
-========================================================= */
-
-.project-data-viz {
-  margin-top: 22px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-}
-
-.viz-title {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--green-2);
-  margin-bottom: 14px;
-  font-weight: 600;
-}
-
-.viz-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 14px;
-  margin-bottom: 14px;
-}
-
-.viz-card {
-  background: rgba(255,255,255,0.82);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 18px;
-  box-shadow: 0 12px 32px rgba(16,16,16,0.05);
-}
-
-.viz-card.dark {
-  background: #101714;
-  color: #fff;
-  border-color: rgba(255,255,255,0.1);
-}
-
-.viz-card h5 {
-  font-size: 0.88rem;
-  margin-bottom: 12px;
-  color: inherit;
-}
-
-.viz-card p {
-  font-size: 0.8rem;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-.viz-card.dark p {
-  color: rgba(255,255,255,0.62);
-}
-
-.line-chart-box {
-  height: 180px;
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  background:
-    linear-gradient(to top, rgba(44,106,80,0.08), transparent),
-    repeating-linear-gradient(to right, transparent, transparent 48px, rgba(16,16,16,0.05) 49px),
-    repeating-linear-gradient(to bottom, transparent, transparent 44px, rgba(16,16,16,0.05) 45px);
-}
-
-.line-chart-box.dark {
-  background:
-    linear-gradient(to top, rgba(152,215,184,0.10), transparent),
-    repeating-linear-gradient(to right, transparent, transparent 48px, rgba(255,255,255,0.06) 49px),
-    repeating-linear-gradient(to bottom, transparent, transparent 44px, rgba(255,255,255,0.06) 45px);
-}
-
-.line-chart-box svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.chart-caption-row {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  color: var(--muted-2);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.viz-card.dark .chart-caption-row {
-  color: rgba(255,255,255,0.52);
-}
-
-.bar-chart {
-  display: grid;
-  gap: 12px;
-}
-
-.bar-item {
-  display: grid;
-  grid-template-columns: 92px 1fr 48px;
-  gap: 10px;
-  align-items: center;
-}
-
-.bar-item span {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.viz-card.dark .bar-item span {
-  color: rgba(255,255,255,0.62);
-}
-
-.bar-track {
-  height: 9px;
-  background: rgba(16,16,16,0.08);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.viz-card.dark .bar-track {
-  background: rgba(255,255,255,0.12);
-}
-
-.bar-fill {
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--green), var(--green-2), var(--gold));
-}
-
-.blue-fill {
-  background: linear-gradient(90deg, #172B4D, #315B91, #7DA7E8);
-}
-
-.gold-fill {
-  background: linear-gradient(90deg, #7A4E12, #B9822B, #E7B75B);
-}
-
-.funnel-viz {
-  display: grid;
-  gap: 8px;
-}
-
-.funnel-step {
-  padding: 11px 14px;
-  border-radius: 14px;
-  background: rgba(44,106,80,0.09);
-  border: 1px solid rgba(44,106,80,0.16);
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  align-items: center;
-}
-
-.funnel-step:nth-child(2) {
-  margin-left: 16px;
-}
-
-.funnel-step:nth-child(3) {
-  margin-left: 32px;
-}
-
-.funnel-step:nth-child(4) {
-  margin-left: 48px;
-}
-
-.funnel-step strong {
-  font-size: 0.85rem;
-}
-
-.funnel-step span {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  color: var(--green-2);
-}
-
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  overflow: hidden;
-  border-radius: 16px;
-  font-size: 0.82rem;
-}
-
-.data-table th {
-  text-align: left;
-  background: var(--green);
-  color: #fff;
-  padding: 10px 12px;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 500;
-}
-
-.data-table td {
-  padding: 11px 12px;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink-2);
-  background: rgba(255,255,255,0.72);
-  vertical-align: top;
-}
-
-.data-table tr:last-child td {
-  border-bottom: none;
-}
-
-.network-viz {
-  min-height: 190px;
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at center, rgba(44,106,80,0.14), transparent 42%),
-    rgba(255,255,255,0.72);
-  border: 1px solid var(--line);
-  position: relative;
-  overflow: hidden;
-}
-
-.network-viz::before,
-.network-viz::after {
-  content: "";
-  position: absolute;
-  background: rgba(44,106,80,0.22);
-  height: 1px;
-  width: 70%;
-  left: 15%;
-  top: 50%;
-  transform: rotate(18deg);
-}
-
-.network-viz::after {
-  transform: rotate(-18deg);
-}
-
-.net-node {
-  position: absolute;
-  width: 72px;
-  height: 54px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  background: #fff;
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 24px rgba(16,16,16,0.08);
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--muted);
-  z-index: 2;
-  text-align: center;
-  padding: 6px;
-}
-
-.net-node.main {
-  width: 86px;
-  height: 64px;
-  background: var(--green);
-  color: #fff;
-  left: calc(50% - 43px);
-  top: calc(50% - 32px);
-}
-
-.creator-mix {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 11px;
-}
-
-.creator-stat {
-  border-radius: 16px;
-  border: 1px solid var(--line);
-  padding: 14px;
-  background: rgba(255,255,255,0.78);
-}
-
-.creator-stat strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 1.9rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.creator-stat span {
-  display: block;
-  margin-top: 7px;
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-@media (max-width: 900px) {
-  .viz-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .creator-mix {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
-<script>
-/* =========================================================
-   ADD DATA VISUALS TO THE 3 CASE STUDIES
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-  function createAerohyreVisuals() {
-    return `
-      <div class="project-data-viz">
-        <div class="viz-title">Data story</div>
-
-        <div class="viz-grid">
-          <div class="viz-card">
-            <h5>MAU growth trajectory</h5>
-            <div class="line-chart-box">
-              <svg viewBox="0 0 500 180" preserveAspectRatio="none">
-                <path d="M0,158 C60,154 90,145 130,132 C175,118 200,106 245,92 C292,76 320,52 370,43 C425,31 458,18 500,12"
-                  fill="none" stroke="#315B91" stroke-width="5" stroke-linecap="round"/>
-                <path d="M0,158 C60,154 90,145 130,132 C175,118 200,106 245,92 C292,76 320,52 370,43 C425,31 458,18 500,12 L500,180 L0,180 Z"
-                  fill="rgba(49,91,145,0.16)"/>
-              </svg>
-            </div>
-            <div class="chart-caption-row">
-              <span>Launch</span>
-              <span>Month 6 · 165K+ MAUs</span>
-            </div>
-          </div>
-
-          <div class="viz-card">
-            <h5>Acquisition funnel</h5>
-            <div class="funnel-viz">
-              <div class="funnel-step"><strong>Awareness</strong><span>Paid + SEO</span></div>
-              <div class="funnel-step"><strong>Traffic</strong><span>Search + Meta</span></div>
-              <div class="funnel-step"><strong>Sign-ups</strong><span>8K+</span></div>
-              <div class="funnel-step"><strong>Retention</strong><span>Job alerts</span></div>
-            </div>
-          </div>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Before</th>
-              <th>After</th>
-              <th>What changed</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>MAUs</td>
-              <td>0</td>
-              <td>165K+</td>
-              <td>Category launch + acquisition system</td>
-            </tr>
-            <tr>
-              <td>CVR</td>
-              <td>~1.8%</td>
-              <td>~3.9%</td>
-              <td>Landing-page and form experiments</td>
-            </tr>
-            <tr>
-              <td>ROAS</td>
-              <td>1.8×</td>
-              <td>3.1×</td>
-              <td>Audience, creative, and keyword optimization</td>
-            </tr>
-            <tr>
-              <td>CAC</td>
-              <td>Baseline</td>
-              <td>−32%</td>
-              <td>Segmentation + retargeting + funnel cleanup</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    `;
-  }
-
-  function createQledVisuals() {
-    return `
-      <div class="project-data-viz">
-        <div class="viz-title">Campaign performance view</div>
-
-        <div class="viz-grid">
-          <div class="viz-card">
-            <h5>Media and trust engine</h5>
-            <div class="bar-chart">
-              <div class="bar-item">
-                <span>Creators</span>
-                <div class="bar-track"><div class="bar-fill blue-fill" style="width: 92%"></div></div>
-                <span>100+</span>
-              </div>
-              <div class="bar-item">
-                <span>Reach</span>
-                <div class="bar-track"><div class="bar-fill blue-fill" style="width: 88%"></div></div>
-                <span>12M+</span>
-              </div>
-              <div class="bar-item">
-                <span>Visits</span>
-                <div class="bar-track"><div class="bar-fill blue-fill" style="width: 76%"></div></div>
-                <span>180K</span>
-              </div>
-              <div class="bar-item">
-                <span>Sales</span>
-                <div class="bar-track"><div class="bar-fill blue-fill" style="width: 58%"></div></div>
-                <span>+22%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="viz-card">
-            <h5>Creator tier mix</h5>
-            <div class="creator-mix">
-              <div class="creator-stat">
-                <strong>5</strong>
-                <span>Large tech reviewers</span>
-              </div>
-              <div class="creator-stat">
-                <strong>25</strong>
-                <span>Mid-tier creators</span>
-              </div>
-              <div class="creator-stat">
-                <strong>70+</strong>
-                <span>Micro creators</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Launch lever</th>
-              <th>Role</th>
-              <th>Signal</th>
-              <th>Recruiter takeaway</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Creators</td>
-              <td>Trust building</td>
-              <td>100+ activated</td>
-              <td>Built third-party validation before conversion push</td>
-            </tr>
-            <tr>
-              <td>Paid retargeting</td>
-              <td>Conversion</td>
-              <td>Warm audience campaigns</td>
-              <td>Connected brand activity to performance outcomes</td>
-            </tr>
-            <tr>
-              <td>Website traffic</td>
-              <td>Consideration</td>
-              <td>180K+ visits</td>
-              <td>Created high-intent product discovery</td>
-            </tr>
-            <tr>
-              <td>Online sales</td>
-              <td>Business result</td>
-              <td>+22% uplift</td>
-              <td>Launch influenced measurable commercial movement</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    `;
-  }
-
-  function createCashifyVisuals() {
-    return `
-      <div class="project-data-viz">
-        <div class="viz-title">Partner ecosystem performance</div>
-
-        <div class="viz-grid">
-          <div class="viz-card">
-            <h5>Revenue uplift</h5>
-            <div class="line-chart-box">
-              <svg viewBox="0 0 500 180" preserveAspectRatio="none">
-                <path d="M0,135 C55,130 82,126 120,120 C170,112 205,105 250,92 C305,78 350,62 405,44 C450,30 475,22 500,18"
-                  fill="none" stroke="#B9822B" stroke-width="5" stroke-linecap="round"/>
-                <path d="M0,135 C55,130 82,126 120,120 C170,112 205,105 250,92 C305,78 350,62 405,44 C450,30 475,22 500,18 L500,180 L0,180 Z"
-                  fill="rgba(185,130,43,0.18)"/>
-              </svg>
-            </div>
-            <div class="chart-caption-row">
-              <span>Baseline</span>
-              <span>₹12L+ / month · +22%</span>
-            </div>
-          </div>
-
-          <div class="viz-card">
-            <h5>Affiliate ecosystem map</h5>
-            <div class="network-viz">
-              <div class="net-node main">Cashify</div>
-              <div class="net-node" style="left: 8%; top: 12%;">Affiliates</div>
-              <div class="net-node" style="right: 8%; top: 12%;">Creators</div>
-              <div class="net-node" style="left: 8%; bottom: 12%;">Offers</div>
-              <div class="net-node" style="right: 8%; bottom: 12%;">Revenue</div>
-            </div>
-          </div>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Growth lever</th>
-              <th>Scale</th>
-              <th>Outcome</th>
-              <th>What it proves</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Partner accounts</td>
-              <td>50+</td>
-              <td>₹12L+ monthly revenue</td>
-              <td>Can manage revenue-driving partnerships</td>
-            </tr>
-            <tr>
-              <td>Creator activation</td>
-              <td>100+</td>
-              <td>30M+ impressions</td>
-              <td>Can connect creator ecosystems to acquisition</td>
-            </tr>
-            <tr>
-              <td>Partner customers</td>
-              <td>Affiliate channel</td>
-              <td>+40% lift</td>
-              <td>Improved acquisition contribution</td>
-            </tr>
-            <tr>
-              <td>Revenue productivity</td>
-              <td>Existing base</td>
-              <td>+22% uplift</td>
-              <td>Improved output without depending only on new partners</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    `;
-  }
-
-  document.querySelectorAll(".case-card").forEach(function (card) {
-    const title = card.querySelector("h3");
-    const content = card.querySelector(".case-content");
-
-    if (!title || !content || content.querySelector(".project-data-viz")) return;
-
-    const titleText = title.textContent.toLowerCase();
-
-    if (titleText.includes("aviation hiring growth engine")) {
-      content.insertAdjacentHTML("beforeend", createAerohyreVisuals());
-    }
-
-    if (titleText.includes("google qled tv")) {
-      content.insertAdjacentHTML("beforeend", createQledVisuals());
-    }
-
-    if (titleText.includes("cashify")) {
-      content.insertAdjacentHTML("beforeend", createCashifyVisuals());
-    }
-  });
-});
-</script>
-   <!-- FINAL PORTFOLIO IMPROVEMENTS: LINKS, PHOTO SLOT, COPY, CASE STUDIES, DATA VISUALS -->
-<style>
-/* =========================================================
-  </script>
-<style>
-/* =========================================================
-========================================================= */
-
-.avatar {
-  overflow: hidden !important;
-  border-radius: 22px !important;
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Logo image styling */
-.logo-img {
-  background: rgba(255,255,255,0.92) !important;
-  padding: 7px !important;
-  width: 88px !important;
-  height: 54px !important;
-  overflow: hidden;
-}
-
-.logo-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* Metric context labels */
-.metric-context-label {
-  display: block;
-  margin-top: 8px;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  color: var(--muted-2);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-/* Case proof blocks */
-.final-proof-block {
-  margin-top: 24px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: rgba(255,255,255,0.78);
-  box-shadow: 0 12px 34px rgba(16,16,16,0.05);
-}
-
-.final-proof-label {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--green-2);
-  font-weight: 600;
-  margin-bottom: 18px;
-}
-
-/* Aerohyre 11-month bar chart */
-.mau-bar-chart {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  gap: 8px;
-  align-items: end;
-  height: 220px;
-  padding: 18px 10px 8px;
-  border-radius: 18px;
-  background:
-    linear-gradient(to top, rgba(44,106,80,0.08), transparent),
-    repeating-linear-gradient(to bottom, transparent, transparent 43px, rgba(16,16,16,0.05) 44px);
-  border: 1px solid var(--line);
-}
-
-.mau-bar-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 7px;
-  height: 100%;
-}
-
-.mau-bar {
-  width: 100%;
-  max-width: 28px;
-  border-radius: 999px 999px 6px 6px;
-  background: linear-gradient(180deg, var(--green-2), var(--green), var(--gold));
-  box-shadow: 0 8px 18px rgba(24,58,46,0.18);
-}
-
-.mau-value {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  color: var(--ink-2);
-  white-space: nowrap;
-}
-
-.mau-month {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  color: var(--muted-2);
-  text-transform: uppercase;
-}
-
-.chart-note {
-  margin-top: 14px;
-  padding: 13px 15px;
-  border-radius: 14px;
-  background: rgba(44,106,80,0.08);
-  border: 1px solid rgba(44,106,80,0.16);
-  color: var(--muted);
-  font-size: 0.86rem;
-  line-height: 1.55;
-}
-
-/* QLED creator breakdown */
-.creator-tier-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.creator-tier-card {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 18px;
-  background:
-    radial-gradient(circle at top right, rgba(49,91,145,0.12), transparent 42%),
-    rgba(255,255,255,0.82);
-}
-
-.creator-tier-card strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 2.4rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--ink);
-}
-
-.creator-tier-card h5 {
-  margin-top: 12px;
-  font-size: 0.98rem;
-}
-
-.creator-tier-card p {
-  margin-top: 7px;
-  font-size: 0.84rem;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-/* Tyroo visual cards */
-.tyroo-visual-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 20px;
-}
-
-.tyroo-card {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: rgba(255,255,255,0.78);
-  padding: 18px;
-}
-
-.tyroo-card span {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  color: var(--muted-2);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.tyroo-card strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 2rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  margin-top: 9px;
-}
-
-.tyroo-card p {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 0.84rem;
-  line-height: 1.55;
-}
-
-.tyroo-cluster {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 18px;
-}
-
-.tyroo-cluster span {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  color: var(--ink-2);
-  background: rgba(49,91,145,0.10);
-  border: 1px solid rgba(49,91,145,0.16);
-  border-radius: 999px;
-  padding: 8px 11px;
-}
-
-@media (max-width: 900px) {
-  .creator-tier-grid,
-  .tyroo-visual-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .mau-bar-chart {
-    overflow-x: auto;
-    grid-template-columns: repeat(11, minmax(38px, 1fr));
-  }
-}
-</style>
-
-<script>
-/* =========================================================
-   SAFE PORTFOLIO PATCH SCRIPT
-   No document.body.innerHTML used.
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-  /* =========================================================
-     CONFIG: UPDATE FILENAMES HERE IF YOUR FILES DIFFER
-  ========================================================= */
-
-  const resumeFile = "resume.pdf.pdf";
-  const linkedInUrl = "https://www.linkedin.com/in/abhishek-pal-1292971a5/";
-
-  const userPhoto = "photo.jpg";
-
-const aerohyreLogo = "aerohyre%20logo%20PNG.jpg";
-  const cashifyLogo = "Cashify logo PNG.png";
-  const tyrooLogo = "Tyroo logo PNG.png";
-   
-const symbiosisLogo = "symbiosis-logo.png";
-const superPlastronicsLogo = "SPPL-logo.png";
-
-  /* =========================================================
-     1. FIX RESUME + LINKEDIN LINKS
-  ========================================================= */
-
-  document.querySelectorAll("a").forEach(function (link) {
-    const text = link.textContent.toLowerCase();
-    const href = link.getAttribute("href");
-
-    if (text.includes("resume")) {
-      /*
-        INSERT YOUR RESUME PDF LINK HERE.
-        Current GitHub file used: resume.pdf.pdf
-      */
-      link.setAttribute("href", resumeFile);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-
-    if (href === "https://linkedin.com" || text.includes("linkedin")) {
-      /*
-        LinkedIn profile link.
-        Update if needed.
-      */
-      link.setAttribute("href", linkedInUrl);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-  });
-
-  /* =========================================================
-     2. ADD USER PHOTO
-  ========================================================= */
-
-  const avatar = document.querySelector(".avatar");
-
-  if (avatar && !avatar.querySelector("img")) {
-    avatar.innerHTML = `
-      <!-- Add your photo: save your headshot as photo.jpg in the same folder as this file -->
-      <img src="${userPhoto}" alt="Abhishek Pal" />
-    `;
-  }
-
-  /* =========================================================
-     3. REPLACE EXPERIENCE LOGOS
-  ========================================================= */
-
-  function replaceExperienceLogo(companyName, imageSrc, altText) {
-    document.querySelectorAll(".exp-card").forEach(function (card) {
-      const heading = card.querySelector("h3");
-      if (!heading) return;
-
-      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
-        const logo = card.querySelector(".exp-logo");
-        if (logo) {
-          logo.classList.add("logo-img");
-          logo.innerHTML = `<img src="${imageSrc}" alt="${altText}">`;
-        }
-      }
-    });
-  }
-
-  replaceExperienceLogo("Aerohyre", aerohyreLogo, "Aerohyre logo");
-  replaceExperienceLogo("Cashify", cashifyLogo, "Cashify logo");
-  replaceExperienceLogo("Tyroo", tyrooLogo, "Tyroo logo");
-  replaceExperienceLogo("Super Plastronics", superPlastronicsLogo, "Super Plastronics logo");
-  replaceExperienceLogo("Symbiosis", symbiosisLogo, "Symbiosis logo");
-
-  /* =========================================================
-     4. REWRITE ABOUT ME SECTION
-  ========================================================= */
-
-  const aboutCopy = document.querySelector(".about-copy");
-
-  if (aboutCopy) {
-    aboutCopy.innerHTML = `
-      <p>
-        I didn't enter marketing from the usual path. I studied mathematics first — which made me comfortable with patterns, ambiguity, and numbers that don't cooperate on day one.
-      </p>
-      <br>
-      <p>
-        That background helped when I moved into growth — where the real work is rarely just 'run ads.' It's understanding the market, sequencing the funnel, stress-testing the message, reading the data, and knowing when to scale versus when to rebuild the engine entirely.
-      </p>
-      <br>
-      <p>
-        At Aerohyre, I built a hiring platform's entire acquisition system from zero in a market that didn't yet exist as a category — no benchmarks, no playbook, just first principles. At Super Plastronics, I ran creator-led TV launches against Samsung-scale trust with a fraction of the budget. At Cashify, I turned an underactivated affiliate base into a structured revenue channel by treating it like account-based sales. At Tyroo, I built B2B GTM positioning for AdTech clients across APAC.
-      </p>
-      <br>
-      <p>
-        The common thread: I like messy growth problems where strategy and execution have to happen in the same room, often in the same week.
-      </p>
-    `;
-  }
-
-  /* =========================================================
-     5. ADD TIMELINE CONTEXT TO 165K METRICS SAFELY
-  ========================================================= */
-
-  document.querySelectorAll(".metric-tile, .visual-mini, .exp-tags span, .result-pill, .mock-dashboard, .chart-wrap").forEach(function (el) {
-    const txt = el.textContent.toLowerCase();
-
-    if (
-      txt.includes("165k") &&
-      !el.querySelector(".metric-context-label")
-    ) {
-      const context = document.createElement("small");
-      context.className = "metric-context-label";
-      context.textContent = "11 months · Jun 2023 – May 2024 · at ₹12–18L/month average media spend";
-      el.appendChild(context);
-    }
-  });
-
-  /* =========================================================
-     6. REWRITE CASHIFY CASE STUDY
-  ========================================================= */
-
-  document.querySelectorAll(".case-card").forEach(function (card) {
-    const title = card.querySelector("h3");
-    if (!title) return;
-
-    const titleText = title.textContent.toLowerCase();
-
-    if (titleText.includes("cashify")) {
-      const lede = card.querySelector(".case-lede");
-      if (lede) {
-        lede.textContent =
-          "The affiliate program had 50+ partners, but revenue was unevenly distributed. Growth was not a partner acquisition problem — it was an activation and prioritization problem.";
-      }
-
-      const rows = card.querySelectorAll(".detail-row");
-
-      if (rows[0]) {
-        rows[0].innerHTML = `
-          <h4>The real problem</h4>
-          <p>The affiliate program had 50+ partners but revenue was unevenly distributed — the bottom 60% of accounts contributed less than 15% of total revenue. Growth wasn't a partner acquisition problem, it was an activation and prioritization problem.</p>
-        `;
-      }
-
-      if (rows[1]) {
-        rows[1].innerHTML = `
-          <h4>The insight</h4>
-          <p>I treated the affiliate base like an ABM target list. Segmented all 50+ partners into three tiers by revenue headroom. Tier 1 got dedicated support cadence, tailored offers, and creator content to reduce audience trust friction. Dormant accounts got personalized reactivation outreach that referenced their specific last performance gap — not a batch email.</p>
-        `;
-      }
-
-      if (rows[2]) {
-        rows[2].innerHTML = `
-          <h4>Execution</h4>
-          <p>Built partner tiers, prioritized accounts by revenue headroom, created tailored offer pushes, supported creator-led trust content, and maintained structured follow-up cadences for high-potential accounts.</p>
-        `;
-      }
-
-      if (rows[3]) {
-        rows[3].innerHTML = `
-          <h4>What failed</h4>
-          <p>Generic partner outreach had near-zero response. Batch commission update emails didn't move anyone. What worked was treating every reactivation like a sales motion — specific, referenced, and tied to a clear next action.</p>
-        `;
-      }
-
-      if (rows[4]) {
-        rows[4].innerHTML = `
-          <h4>Outcome</h4>
-          <p>The 22% revenue uplift came primarily from 8 existing accounts that had been under-supported, not from signing new partners.</p>
-        `;
-      }
-    }
-  });
-
-  /* =========================================================
-     7. AEROHYRE MAU BAR CHART
-  ========================================================= */
-
-  function aerohyreBarChart() {
-    const data = [
-      ["M1", "2K", 2],
-      ["M2", "6K", 5],
-      ["M3", "14K", 10],
-      ["M4", "28K", 17],
-      ["M5", "52K", 32],
-      ["M6", "78K", 47],
-      ["M7", "100K", 60],
-      ["M8", "120K", 72],
-      ["M9", "140K", 84],
-      ["M10", "158K", 94],
-      ["M11", "165K+", 100]
-    ];
-
-    return `
-      <div class="final-proof-block final-aerohyre-proof">
-        <div class="final-proof-label">MAU growth trajectory · Month 0 → 11</div>
-        <div class="mau-bar-chart">
-          ${data.map(function (item) {
-            return `
-              <div class="mau-bar-item">
-                <div class="mau-value">${item[1]}</div>
-                <div class="mau-bar" style="height: ${item[2]}%;"></div>
-                <div class="mau-month">${item[0]}</div>
-              </div>
-            `;
-          }).join("")}
-        </div>
-        <div class="chart-note">
-          Inflection at Month 5 corresponds to shift from broad-match to phrase/exact match + retargeting layer.
-        </div>
-      </div>
-    `;
-  }
-
-  document.querySelectorAll(".case-card").forEach(function (card) {
-    const title = card.querySelector("h3");
-    const content = card.querySelector(".case-content");
-
-    if (
-      title &&
-      content &&
-      title.textContent.toLowerCase().includes("aviation hiring growth engine") &&
-      !content.querySelector(".final-aerohyre-proof")
-    ) {
-      content.insertAdjacentHTML("beforeend", aerohyreBarChart());
-    }
-  });
-
-  /* =========================================================
-     8. QLED CREATOR BREAKDOWN
-  ========================================================= */
-
-  function qledCreatorBreakdown() {
-    return `
-      <div class="final-proof-block final-qled-proof">
-        <div class="final-proof-label">Creator program breakdown · 100+ total</div>
-        <div class="creator-tier-grid">
-          <div class="creator-tier-card">
-            <strong>60+</strong>
-            <h5>Nano creators</h5>
-            <p>10K–50K followers · highest engagement and strongest authenticity for product discovery.</p>
-          </div>
-          <div class="creator-tier-card">
-            <strong>30+</strong>
-            <h5>Micro creators</h5>
-            <p>50K–200K followers · best purchase intent and stronger audience-product fit.</p>
-          </div>
-          <div class="creator-tier-card">
-            <strong>10+</strong>
-            <h5>Mid-tier creators</h5>
-            <p>200K–1M followers · brand awareness lift and credibility at launch scale.</p>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  document.querySelectorAll(".case-card").forEach(function (card) {
-    const title = card.querySelector("h3");
-    const content = card.querySelector(".case-content");
-
-    if (
-      title &&
-      content &&
-      title.textContent.toLowerCase().includes("google qled tv") &&
-      !content.querySelector(".final-qled-proof")
-    ) {
-      content.insertAdjacentHTML("beforeend", qledCreatorBreakdown());
-    }
-  });
-
-  /* =========================================================
-     9. ADD TYROO CASE STUDY
-  ========================================================= */
-
-  function tyrooCaseStudy() {
-    return `
-      <article class="case-card reveal final-tyroo-case visible">
-        <div class="case-inner">
-          <div class="case-visual blue">
-            <div class="visual-label">B2B AdTech GTM system</div>
-
-            <div class="mock-dashboard">
-              <div class="mock-top">
-                <span>SEO-led GTM</span>
-                <span>APAC verticals</span>
-              </div>
-              <div class="mock-num">85+</div>
-              <div class="chart-caption-row">
-                <span>Keywords ranked</span>
-                <span>$250K+ pipeline influenced</span>
-              </div>
-
-              <div class="tyroo-visual-grid">
-                <div class="tyroo-card">
-                  <span>Vertical</span>
-                  <strong>BFSI</strong>
-                  <p>Compliance-heavy buyer pain points and performance trust signals.</p>
-                </div>
-                <div class="tyroo-card">
-                  <span>Vertical</span>
-                  <strong>Retail</strong>
-                  <p>Customer acquisition, retargeting, and commerce media narratives.</p>
-                </div>
-                <div class="tyroo-card">
-                  <span>Vertical</span>
-                  <strong>Gaming</strong>
-                  <p>User acquisition, engagement, and regional scale positioning.</p>
-                </div>
-                <div class="tyroo-card">
-                  <span>Sales asset</span>
-                  <strong>GTM</strong>
-                  <p>Every page mapped keyword intent to a sales conversation angle.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="tyroo-cluster">
-              <span>85+ keywords ranked</span>
-              <span>$250K+ pipeline influenced</span>
-              <span>BFSI</span>
-              <span>Retail</span>
-              <span>Gaming</span>
-            </div>
-          </div>
-
-          <div class="case-content">
-            <div class="case-kicker">Case study 04 · Tyroo · AdTech · B2B</div>
-            <h3>Building SEO-led GTM positioning for a B2B AdTech platform across APAC.</h3>
-            <p class="case-lede">
-              B2B AdTech content either over-indexes on technical jargon or is too generic to differentiate. The gap was content that could both rank for buying-intent keywords and give the sales team something credible to use in pipeline conversations across BFSI, Retail, and Gaming verticals.
-            </p>
-
-            <div class="snapshot">
-              <div>
-                <span>Challenge</span>
-                <strong>Differentiate B2B AdTech content beyond jargon and generic thought leadership.</strong>
-              </div>
-              <div>
-                <span>Strategy</span>
-                <strong>Build keyword clusters mapped to vertical-specific buyer pain points.</strong>
-              </div>
-              <div>
-                <span>Outcome</span>
-                <strong>85+ keywords ranked and $250K+ pipeline influenced.</strong>
-              </div>
-            </div>
-
-            <div class="case-details">
-              <div class="detail-row">
-                <h4>The challenge</h4>
-                <p>B2B AdTech content either over-indexes on technical jargon or is too generic to differentiate. The gap was content that could both rank for buying-intent keywords and give the sales team something credible to use in pipeline conversations across BFSI, Retail, and Gaming verticals.</p>
-              </div>
-
-              <div class="detail-row">
-                <h4>The execution</h4>
-                <p>Audited content gaps versus competitors. Built vertical-specific keyword clusters for each APAC industry segment. Developed positioning frameworks that mapped Tyroo's capabilities to specific buyer pain points per vertical. Prioritized pages by pipeline contribution potential, not just search volume.</p>
-              </div>
-
-              <div class="detail-row">
-                <h4>The insight</h4>
-                <p>B2B content fails when marketing and sales treat it separately. Every piece I built had both a keyword target and a sales-angle annotation — so it became a shared asset, not a marketing deliverable that sales ignored.</p>
-              </div>
-            </div>
-
-            <div class="result-row">
-              <span class="result-pill">85+ keywords ranked</span>
-              <span class="result-pill">$250K+ pipeline influenced</span>
-              <span class="result-pill">BFSI</span>
-              <span class="result-pill">Retail</span>
-              <span class="result-pill">Gaming</span>
-            </div>
-          </div>
-        </div>
-      </article>
-    `;
-  }
-
-  const caseStack = document.querySelector(".case-stack");
-
-  if (caseStack && !caseStack.querySelector(".final-tyroo-case")) {
-    caseStack.insertAdjacentHTML("beforeend", tyrooCaseStudy());
-  }
-});
-</script>
-<style>
-/* =========================================================
-========================================================= */
-
-/* Make profile photo visible and premium */
-.profile-head {
-  align-items: center !important;
-}
-
-.avatar {
-  width: 86px !important;
-  height: 86px !important;
-  min-width: 86px !important;
-  border-radius: 26px !important;
-  overflow: hidden !important;
-  background: var(--bg-2) !important;
-  border: 1px solid var(--line) !important;
-  box-shadow: 0 12px 28px rgba(16,16,16,0.10);
-}
-
-.avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  display: block !important;
-}
-
-/* Bigger, cleaner company logo boxes */
-.exp-logo.logo-img {
-  width: 110px !important;
-  height: 72px !important;
-  border-radius: 18px !important;
-  padding: 12px !important;
-  background: #fff !important;
-  border: 1px solid rgba(255,255,255,0.18) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.exp-logo.logo-img img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  display: block !important;
-}
-
-/* Hide broken image icon if filename is wrong */
-.exp-logo.logo-img img[src=""],
-.exp-logo.logo-img img:not([src]) {
-  display: none !important;
-}
-
-/* Improve Super Plastronics campaign thumbnails */
-.brand-image-row img {
-  object-fit: cover !important;
-  object-position: center !important;
-  height: 115px !important;
-}
-
-/* Make logos readable on dark experience cards */
-.exp-card .exp-logo.logo-img {
-  margin-bottom: 8px;
-}
-
-/* Mobile cleanup */
-@media (max-width: 620px) {
-  .avatar {
-    width: 78px !important;
-    height: 78px !important;
-    min-width: 78px !important;
-  }
-
-  .exp-logo.logo-img {
-    width: 100px !important;
-    height: 64px !important;
-  }
-}
-</style>
-
-<script>
-/* =========================================================
-   IMAGE DISPLAY FIX SCRIPT
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-  /*
-    IMPORTANT:
-    These filenames must exactly match your GitHub uploaded files.
-    If your file names are different, change them here.
-  */
-
-  const userPhoto = "photo.jpg";
-
-  const aerohyreLogo = "aerohyre logo PNG.jpg";
-  const cashifyLogo = "Cashify logo PNG.png";
-  const tyrooLogo = "Tyroo logo PNG.png";
-
-  const superPlastronicsLogo = "Super Plastronics logo.png";
-  const symbiosisLogo = "Symbiosis logo.png";
-
-  /* Fix profile photo */
-  const avatar = document.querySelector(".avatar");
-  if (avatar) {
-    avatar.innerHTML = `
-      <!-- Add your photo: save your headshot as photo.jpg in the same folder as this file -->
-      <img src="${userPhoto}" alt="Abhishek Pal">
-    `;
-  }
-
-  /* Replace company logos safely */
-  function setLogo(companyName, imageSrc, fallbackText) {
-    document.querySelectorAll(".exp-card").forEach(function (card) {
-      const heading = card.querySelector("h3");
-      if (!heading) return;
-
-      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
-        const logo = card.querySelector(".exp-logo");
-        if (!logo) return;
-
-        logo.classList.add("logo-img");
-
-        logo.innerHTML = `
-          <img src="${imageSrc}" alt="${companyName} logo" 
-               onerror="this.style.display='none'; this.parentElement.textContent='${fallbackText}';">
-        `;
-      }
-    });
-  }
-
-  setLogo("Aerohyre", aerohyreLogo, "AH");
-  setLogo("Cashify", cashifyLogo, "CF");
-  setLogo("Tyroo", tyrooLogo, "TY");
-  setLogo("Super Plastronics", superPlastronicsLogo, "SP");
-  setLogo("Symbiosis", symbiosisLogo, "SI");
-});
-</script>
-   <!-- FINAL MASTER PATCH: LINKS, PHOTO, LOGOS, CASE STUDY UPDATES, VISUALS -->
-<style>
-/* =========================================================
-   FINAL MASTER PATCH
-========================================================= */
-
-/* ---------- Profile photo ---------- */
-
-.profile-head {
-  align-items: center !important;
-  gap: 20px !important;
-}
-
-.avatar {
-  width: 112px !important;
-  height: 112px !important;
-  min-width: 112px !important;
-  border-radius: 28px !important;
-  overflow: hidden !important;
-  background: #F3F0E8 !important;
-  border: 1px solid var(--line) !important;
-  box-shadow: 0 18px 34px rgba(16,16,16,0.10) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  display: block !important;
-  background: #F3F0E8 !important;
-}
-
-/* ---------- Experience logos ---------- */
-
-.exp-logo {
-  width: auto !important;
-  min-width: 64px !important;
-  height: 42px !important;
-  padding: 0 14px !important;
-  border-radius: 999px !important;
-  background: rgba(255,255,255,0.08) !important;
-  border: 1px solid rgba(255,255,255,0.16) !important;
-  color: rgba(255,255,255,0.88) !important;
-  font-family: var(--mono) !important;
-  font-size: 0.72rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.08em !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.exp-logo.logo-img {
-  width: 118px !important;
-  height: 62px !important;
-  padding: 12px !important;
-  border-radius: 18px !important;
-  background: #fff !important;
-}
-
-.exp-logo.logo-img img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  display: block !important;
-}
-
-.exp-logo.text-badge {
-  background: rgba(255,255,255,0.10) !important;
-  border: 1px solid rgba(255,255,255,0.18) !important;
-  color: #fff !important;
-  width: auto !important;
-  height: 42px !important;
-  padding: 0 16px !important;
-  border-radius: 999px !important;
-}
-
-/* ---------- Super Plastronics campaign thumbnails ---------- */
-
-.brand-image-row {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 12px !important;
-  margin: 18px 0 !important;
-}
-
-.brand-image-row img {
-  width: 100% !important;
-  height: 130px !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 16px !important;
-  border: 1px solid rgba(255,255,255,0.16) !important;
-}
-
-/* ---------- Metric context labels ---------- */
-
-.metric-context-label {
-  display: block;
-  margin-top: 8px;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  color: var(--muted-2);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-/* ---------- Final visual proof blocks ---------- */
-
-.final-proof-block {
-  margin-top: 24px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: rgba(255,255,255,0.78);
-  box-shadow: 0 12px 34px rgba(16,16,16,0.05);
-}
-
-.final-proof-label {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--green-2);
-  font-weight: 600;
-  margin-bottom: 18px;
-}
-
-/* ---------- Aerohyre MAU bar chart ---------- */
-
-.mau-bar-chart {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  gap: 8px;
-  align-items: end;
-  height: 220px;
-  padding: 18px 10px 8px;
-  border-radius: 18px;
-  background:
-    linear-gradient(to top, rgba(44,106,80,0.08), transparent),
-    repeating-linear-gradient(to bottom, transparent, transparent 43px, rgba(16,16,16,0.05) 44px);
-  border: 1px solid var(--line);
-}
-
-.mau-bar-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 7px;
-  height: 100%;
-}
-
-.mau-bar {
-  width: 100%;
-  max-width: 28px;
-  border-radius: 999px 999px 6px 6px;
-  background: linear-gradient(180deg, var(--green-2), var(--green), var(--gold));
-  box-shadow: 0 8px 18px rgba(24,58,46,0.18);
-}
-
-.mau-value {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  color: var(--ink-2);
-  white-space: nowrap;
-}
-
-.mau-month {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  color: var(--muted-2);
-  text-transform: uppercase;
-}
-
-.chart-note {
-  margin-top: 14px;
-  padding: 13px 15px;
-  border-radius: 14px;
-  background: rgba(44,106,80,0.08);
-  border: 1px solid rgba(44,106,80,0.16);
-  color: var(--muted);
-  font-size: 0.86rem;
-  line-height: 1.55;
-}
-
-/* ---------- QLED creator breakdown ---------- */
-
-.creator-tier-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.creator-tier-card {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 18px;
-  background:
-    radial-gradient(circle at top right, rgba(49,91,145,0.12), transparent 42%),
-    rgba(255,255,255,0.82);
-}
-
-.creator-tier-card strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 2.4rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--ink);
-}
-
-.creator-tier-card h5 {
-  margin-top: 12px;
-  font-size: 0.98rem;
-}
-
-.creator-tier-card p {
-  margin-top: 7px;
-  font-size: 0.84rem;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-/* ---------- Tyroo case study visuals ---------- */
-
-.tyroo-visual-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 20px;
-}
-
-.tyroo-card {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: rgba(255,255,255,0.78);
-  padding: 18px;
-}
-
-.tyroo-card span {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  color: var(--muted-2);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.tyroo-card strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 2rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  margin-top: 9px;
-}
-
-.tyroo-card p {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 0.84rem;
-  line-height: 1.55;
-}
-
-.tyroo-cluster {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 18px;
-}
-
-.tyroo-cluster span {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  color: var(--ink-2);
-  background: rgba(49,91,145,0.10);
-  border: 1px solid rgba(49,91,145,0.16);
-  border-radius: 999px;
-  padding: 8px 11px;
-}
-
-/* ---------- Mobile cleanup ---------- */
-
-@media (max-width: 900px) {
-  .creator-tier-grid,
-  .tyroo-visual-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .mau-bar-chart {
-    overflow-x: auto;
-    grid-template-columns: repeat(11, minmax(38px, 1fr));
-  }
-}
-
-@media (max-width: 620px) {
-  .avatar {
-    width: 90px !important;
-    height: 90px !important;
-    min-width: 90px !important;
-  }
-
-  .brand-image-row {
-    grid-template-columns: 1fr !important;
-  }
-
-  .brand-image-row img {
-    height: 150px !important;
-  }
-}
-</style>
-
-<script>
-/* =========================================================
-   FINAL MASTER PATCH SCRIPT
-   Safe version: does not use document.body.innerHTML
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-  /* ---------- File config ---------- */
-
-  const resumeFile = "resume.pdf.pdf";
-  const linkedInUrl = "https://www.linkedin.com/in/abhishek-pal-1292971a5/";
-
-  const userPhoto = "photo.jpg";
-
-  const cashifyLogo = "Cashify logo PNG.png";
-  const tyrooLogo = "Tyroo logo PNG.png";
-  const superPlastronicsLogo = "SPPL-logo.png";
-
-  const tvImage1 = "Super Plastronics tv 1 JPEG.jpeg";
-  const tvImage2 = "Super Plastronics TV 2 JPEG.jpeg";
-
-  /* ---------- 1. Resume + LinkedIn links ---------- */
-
-  document.querySelectorAll("a").forEach(function (link) {
-    const text = link.textContent.toLowerCase();
-    const href = link.getAttribute("href");
-
-    if (text.includes("resume")) {
-      /*
-        INSERT YOUR RESUME PDF LINK HERE.
-        Current GitHub file used: resume.pdf.pdf
-      */
-      link.setAttribute("href", resumeFile);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-
-    if (href === "https://linkedin.com" || text.includes("linkedin")) {
-      /*
-        LinkedIn profile link.
-        Update if needed.
-      */
-      link.setAttribute("href", linkedInUrl);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-  });
-
-  /* ---------- 2. Profile photo ---------- */
-
-  const avatar = document.querySelector(".avatar");
-
-  if (avatar) {
-    avatar.innerHTML = `
-      <!-- Add your photo: save your headshot as photo.jpg in the same folder as this file -->
-      <img src="${userPhoto}" alt="Abhishek Pal" onerror="this.style.display='none'; this.parentElement.textContent='AP';">
-    `;
-  }
-
-  /* ---------- Helpers ---------- */
-
-  function findCard(companyName) {
-    let foundCard = null;
-
-    document.querySelectorAll(".exp-card").forEach(function (card) {
-      const heading = card.querySelector("h3");
-      if (!heading) return;
-
-      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
-        foundCard = card;
-      }
-    });
-
-    return foundCard;
-  }
-
-  function setImageLogo(companyName, imageSrc, fallbackText) {
-    const card = findCard(companyName);
-    if (!card) return;
-
-    const logo = card.querySelector(".exp-logo");
-    if (!logo) return;
-
-    logo.className = "exp-logo logo-img";
-    logo.innerHTML = `
-      <img src="${imageSrc}" alt="${companyName} logo"
-           onerror="this.style.display='none'; this.parentElement.className='exp-logo text-badge'; this.parentElement.textContent='${fallbackText}';">
-    `;
-  }
-
-  function setTextBadge(companyName, badgeText) {
-    const card = findCard(companyName);
-    if (!card) return;
-
-    const logo = card.querySelector(".exp-logo");
-    if (!logo) return;
-
-    logo.className = "exp-logo text-badge";
-    logo.textContent = badgeText;
-  }
-
-  /* ---------- 3. Company logos ---------- */
-
-  setTextBadge("Aerohyre", "AEROHYRE");
-  setImageLogo("Super Plastronics", superPlastronicsLogo, "SPPL");
-  setImageLogo("Cashify", cashifyLogo, "CASHIFY");
-  setImageLogo("Tyroo", tyrooLogo, "TYROO");
-  setTextBadge("Symbiosis", "SIU");
-
-  /* ---------- 4. Super Plastronics TV images ---------- */
-
-  const spCard = findCard("Super Plastronics");
-
-  if (spCard && !spCard.querySelector(".brand-image-row")) {
-    const paragraph = spCard.querySelector("p");
-
-    if (paragraph) {
-      const row = document.createElement("div");
-      row.className = "brand-image-row";
-      row.innerHTML = `
-        <img src="${tvImage1}" alt="Super Plastronics TV campaign visual">
-        <img src="${tvImage2}" alt="Super Plastronics QLED TV campaign visual">
-      `;
-      paragraph.parentNode.insertBefore(row, paragraph);
-    }
-  }
-
-  /* ---------- 5. Rewrite About Me ---------- */
-
-  const aboutCopy = document.querySelector(".about-copy");
-
-  if (aboutCopy) {
-    aboutCopy.innerHTML = `
-      <p>
-        I didn't enter marketing from the usual path. I studied mathematics first — which made me comfortable with patterns, ambiguity, and numbers that don't cooperate on day one.
-      </p>
-      <br>
-      <p>
-        That background helped when I moved into growth — where the real work is rarely just 'run ads.' It's understanding the market, sequencing the funnel, stress-testing the message, reading the data, and knowing when to scale versus when to rebuild the engine entirely.
-      </p>
-      <br>
-      <p>
-        At Aerohyre, I built a hiring platform's entire acquisition system from zero in a market that didn't yet exist as a category — no benchmarks, no playbook, just first principles. At Super Plastronics, I ran creator-led TV launches against Samsung-scale trust with a fraction of the budget. At Cashify, I turned an underactivated affiliate base into a structured revenue channel by treating it like account-based sales. At Tyroo, I built B2B GTM positioning for AdTech clients across APAC.
-      </p>
-      <br>
-      <p>
-        The common thread: I like messy growth problems where strategy and execution have to happen in the same room, often in the same week.
-      </p>
-    `;
-  }
-
-  /* ---------- 6. Add context to 165K metrics ---------- */
-
-  document.querySelectorAll(".metric-tile, .visual-mini, .exp-tags span, .result-pill, .mock-dashboard, .chart-wrap").forEach(function (el) {
-    const txt = el.textContent.toLowerCase();
-
-    if (txt.includes("165k") && !el.querySelector(".metric-context-label")) {
-      const context = document.createElement("small");
-      context.className = "metric-context-label";
-      context.textContent = "11 months · Jun 2023 – May 2024 · at ₹12–18L/month average media spend";
-      el.appendChild(context);
-    }
-  });
-
-  /* ---------- 7. Rewrite Cashify case study ---------- */
-
-  document.querySelectorAll(".case-card").forEach(function (card) {
-    const title = card.querySelector("h3");
-    if (!title) return;
-
-    const titleText = title.textContent.toLowerCase();
-
-    if (titleText.includes("cashify")) {
-      const lede = card.querySelector(".case-lede");
-
-      if (lede) {
-        lede.textContent =
-          "The affiliate program had 50+ partners, but revenue was unevenly distributed. Growth was not a partner acquisition problem — it was an activation and prioritization problem.";
-      }
-
-      const rows = card.querySelectorAll(".detail-row");
-
-      if (rows[0]) {
-        rows[0].innerHTML = `
-          <h4>The real problem</h4>
-          <p>The affiliate program had 50+ partners but revenue was unevenly distributed — the bottom 60% of accounts contributed less than 15% of total revenue. Growth wasn't a partner acquisition problem, it was an activation and prioritization problem.</p>
-        `;
-      }
-
-      if (rows[1]) {
-        rows[1].innerHTML = `
-          <h4>The insight</h4>
-          <p>I treated the affiliate base like an ABM target list. Segmented all 50+ partners into three tiers by revenue headroom. Tier 1 got dedicated support cadence, tailored offers, and creator content to reduce audience trust friction. Dormant accounts got personalized reactivation outreach that referenced their specific last performance gap — not a batch email.</p>
-        `;
-      }
-
-      if (rows[2]) {
-        rows[2].innerHTML = `
-          <h4>Execution</h4>
-          <p>Built partner tiers, prioritized accounts by revenue headroom, created tailored offer pushes, supported creator-led trust content, and maintained structured follow-up cadences for high-potential accounts.</p>
-        `;
-      }
-
-      if (rows[3]) {
-        rows[3].innerHTML = `
-          <h4>What failed</h4>
-          <p>Generic partner outreach had near-zero response. Batch commission update emails didn't move anyone. What worked was treating every reactivation like a sales motion — specific, referenced, and tied to a clear next action.</p>
-        `;
-      }
-
-      if (rows[4]) {
-        rows[4].innerHTML = `
-          <h4>Outcome</h4>
-          <p>The 22% revenue uplift came primarily from 8 existing accounts that had been under-supported, not from signing new partners.</p>
-        `;
-      }
-    }
-  });
-
-  /* ---------- 8. Aerohyre MAU bar chart ---------- */
-
-  function aerohyreBarChart() {
-    const data = [
-      ["M1", "2K", 2],
-      ["M2", "6K", 5],
-      ["M3", "14K", 10],
-      ["M4", "28K", 17],
-      ["M5", "52K", 32],
-      ["M6", "78K", 47],
-      ["M7", "100K", 60],
-      ["M8", "120K", 72],
-      ["M9", "140K", 84],
-      ["M10", "158K", 94],
-      ["M11", "165K+", 100]
-    ];
-
-    return `
-      <div class="final-proof-block final-aerohyre-proof">
-        <div class="final-proof-label">MAU growth trajectory · Month 0 → 11</div>
-        <div class="mau-bar-chart">
-          ${data.map(function (item) {
-            return `
-              <div class="mau-bar-item">
-                <div class="mau-value">${item[1]}</div>
-                <div class="mau-bar" style="height: ${item[2]}%;"></div>
-                <div class="mau-month">${item[0]}</div>
-              </div>
-            `;
-          }).join("")}
-        </div>
-        <div class="chart-note">
-          Inflection at Month 5 corresponds to shift from broad-match to phrase/exact match + retargeting layer.
-        </div>
-      </div>
-    `;
-  }
-
-  document.querySelectorAll(".case-card").forEach(function (card) {
-    const title = card.querySelector("h3");
-    const content = card.querySelector(".case-content");
-
-    if (
-      title &&
-      content &&
-      title.textContent.toLowerCase().includes("aviation hiring growth engine") &&
-      !content.querySelector(".final-aerohyre-proof")
-    ) {
-      content.insertAdjacentHTML("beforeend", aerohyreBarChart());
-    }
-  });
-
-  /* ---------- 9. QLED creator breakdown ---------- */
-
-  function qledCreatorBreakdown() {
-    return `
-      <div class="final-proof-block final-qled-proof">
-        <div class="final-proof-label">Creator program breakdown · 100+ total</div>
-        <div class="creator-tier-grid">
-          <div class="creator-tier-card">
-            <strong>60+</strong>
-            <h5>Nano creators</h5>
-            <p>10K–50K followers · highest engagement and strongest authenticity for product discovery.</p>
-          </div>
-          <div class="creator-tier-card">
-            <strong>30+</strong>
-            <h5>Micro creators</h5>
-            <p>50K–200K followers · best purchase intent and stronger audience-product fit.</p>
-          </div>
-          <div class="creator-tier-card">
-            <strong>10+</strong>
-            <h5>Mid-tier creators</h5>
-            <p>200K–1M followers · brand awareness lift and credibility at launch scale.</p>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  document.querySelectorAll(".case-card").forEach(function (card) {
-    const title = card.querySelector("h3");
-    const content = card.querySelector(".case-content");
-
-    if (
-      title &&
-      content &&
-      title.textContent.toLowerCase().includes("google qled tv") &&
-      !content.querySelector(".final-qled-proof")
-    ) {
-      content.insertAdjacentHTML("beforeend", qledCreatorBreakdown());
-    }
-  });
-
-  /* ---------- 10. Tyroo case study ---------- */
-
-  function tyrooCaseStudy() {
-    return `
-      <article class="case-card reveal final-tyroo-case visible">
-        <div class="case-inner">
-          <div class="case-visual blue">
-            <div class="visual-label">B2B AdTech GTM system</div>
-
-            <div class="mock-dashboard">
-              <div class="mock-top">
-                <span>SEO-led GTM</span>
-                <span>APAC verticals</span>
-              </div>
-
-              <div class="mock-num">85+</div>
-
-              <div class="chart-caption-row">
-                <span>Keywords ranked</span>
-                <span>$250K+ pipeline influenced</span>
-              </div>
-
-              <div class="tyroo-visual-grid">
-                <div class="tyroo-card">
-                  <span>Vertical</span>
-                  <strong>BFSI</strong>
-                  <p>Compliance-heavy buyer pain points and performance trust signals.</p>
-                </div>
-
-                <div class="tyroo-card">
-                  <span>Vertical</span>
-                  <strong>Retail</strong>
-                  <p>Customer acquisition, retargeting, and commerce media narratives.</p>
-                </div>
-
-                <div class="tyroo-card">
-                  <span>Vertical</span>
-                  <strong>Gaming</strong>
-                  <p>User acquisition, engagement, and regional scale positioning.</p>
-                </div>
-
-                <div class="tyroo-card">
-                  <span>Sales asset</span>
-                  <strong>GTM</strong>
-                  <p>Every page mapped keyword intent to a sales conversation angle.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="tyroo-cluster">
-              <span>85+ keywords ranked</span>
-              <span>$250K+ pipeline influenced</span>
-              <span>BFSI</span>
-              <span>Retail</span>
-              <span>Gaming</span>
-            </div>
-          </div>
-
-          <div class="case-content">
-            <div class="case-kicker">Case study 04 · Tyroo · AdTech · B2B</div>
-
-            <h3>Building SEO-led GTM positioning for a B2B AdTech platform across APAC.</h3>
-
-            <p class="case-lede">
-              B2B AdTech content either over-indexes on technical jargon or is too generic to differentiate. The gap was content that could both rank for buying-intent keywords and give the sales team something credible to use in pipeline conversations across BFSI, Retail, and Gaming verticals.
-            </p>
-
-            <div class="snapshot">
-              <div>
-                <span>Challenge</span>
-                <strong>Differentiate B2B AdTech content beyond jargon and generic thought leadership.</strong>
-              </div>
-
-              <div>
-                <span>Strategy</span>
-                <strong>Build keyword clusters mapped to vertical-specific buyer pain points.</strong>
-              </div>
-
-              <div>
-                <span>Outcome</span>
-                <strong>85+ keywords ranked and $250K+ pipeline influenced.</strong>
-              </div>
-            </div>
-
-            <div class="case-details">
-              <div class="detail-row">
-                <h4>The challenge</h4>
-                <p>B2B AdTech content either over-indexes on technical jargon or is too generic to differentiate. The gap was content that could both rank for buying-intent keywords and give the sales team something credible to use in pipeline conversations across BFSI, Retail, and Gaming verticals.</p>
-              </div>
-
-              <div class="detail-row">
-                <h4>The execution</h4>
-                <p>Audited content gaps versus competitors. Built vertical-specific keyword clusters for each APAC industry segment. Developed positioning frameworks that mapped Tyroo's capabilities to specific buyer pain points per vertical. Prioritized pages by pipeline contribution potential, not just search volume.</p>
-              </div>
-
-              <div class="detail-row">
-                <h4>The insight</h4>
-                <p>B2B content fails when marketing and sales treat it separately. Every piece I built had both a keyword target and a sales-angle annotation — so it became a shared asset, not a marketing deliverable that sales ignored.</p>
-              </div>
-            </div>
-
-            <div class="result-row">
-              <span class="result-pill">85+ keywords ranked</span>
-              <span class="result-pill">$250K+ pipeline influenced</span>
-              <span class="result-pill">BFSI</span>
-              <span class="result-pill">Retail</span>
-              <span class="result-pill">Gaming</span>
-            </div>
-          </div>
-        </div>
-      </article>
-    `;
-  }
-
-  const caseStack = document.querySelector(".case-stack");
-
-  if (caseStack && !caseStack.querySelector(".final-tyroo-case")) {
-    caseStack.insertAdjacentHTML("beforeend", tyrooCaseStudy());
-  }
-});
-</script>
-   <!-- PHOTO + SPPL + SYMBIOSIS LOGO FIX ONLY -->
-<style>
-/* Profile photo fix */
-.profile-head {
-  align-items: center !important;
-  gap: 20px !important;
-}
-
-.avatar {
-  width: 112px !important;
-  height: 112px !important;
-  min-width: 112px !important;
-  border-radius: 28px !important;
-  overflow: hidden !important;
-  background: #F3F0E8 !important;
-  border: 1px solid var(--line) !important;
-  box-shadow: 0 18px 34px rgba(16,16,16,0.10) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  display: block !important;
-  background: #F3F0E8 !important;
-}
-
-/* Logo box fix */
-.exp-logo.logo-img {
-  width: 118px !important;
-  height: 62px !important;
-  padding: 12px !important;
-  border-radius: 18px !important;
-  background: #fff !important;
-  border: 1px solid rgba(255,255,255,0.18) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.exp-logo.logo-img img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  display: block !important;
-}
-
-/* Fallback badge if logo image fails */
-.exp-logo.text-badge {
-  width: auto !important;
-  min-width: 64px !important;
-  height: 42px !important;
-  padding: 0 16px !important;
-  border-radius: 999px !important;
-  background: rgba(255,255,255,0.10) !important;
-  border: 1px solid rgba(255,255,255,0.18) !important;
-  color: #fff !important;
-  font-family: var(--mono) !important;
-  font-size: 0.72rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.08em !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-@media (max-width: 620px) {
-  .avatar {
-    width: 90px !important;
-    height: 90px !important;
-    min-width: 90px !important;
-  }
-
-  .exp-logo.logo-img {
-    width: 105px !important;
-    height: 58px !important;
-  }
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const userPhoto = "photo.jpg";
-  const spplLogo = "SPPL-logo.png";
-  const symbiosisLogo = "symbiosis-logo.png";
-
-  /* 1. Fix profile photo */
-  const avatar = document.querySelector(".avatar");
-
-  if (avatar) {
-    avatar.innerHTML = `
-      <!-- Add your photo: save your headshot as photo.jpg in the same folder as this file -->
-      <img src="${userPhoto}" alt="Abhishek Pal"
-           onerror="this.style.display='none'; this.parentElement.textContent='AP';">
-    `;
-  }
-
-  /* Helper: find experience card by company heading */
-  function findExperienceCard(companyName) {
-    let targetCard = null;
-
-    document.querySelectorAll(".exp-card").forEach(function (card) {
-      const heading = card.querySelector("h3");
-      if (!heading) return;
-
-      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
-        targetCard = card;
-      }
-    });
-
-    return targetCard;
-  }
-
-  /* Helper: set logo image with fallback */
-  function setCompanyLogo(companyName, imageSrc, fallbackText) {
-    const card = findExperienceCard(companyName);
-    if (!card) return;
-
-    const logoBox = card.querySelector(".exp-logo");
-    if (!logoBox) return;
-
-    logoBox.className = "exp-logo logo-img";
-    logoBox.innerHTML = `
-      <img src="${imageSrc}" alt="${companyName} logo"
-           onerror="this.style.display='none'; this.parentElement.className='exp-logo text-badge'; this.parentElement.textContent='${fallbackText}';">
-    `;
-  }
-
-  /* 2. Fix SPPL logo */
-  setCompanyLogo("Super Plastronics", spplLogo, "SPPL");
-
-  /* 3. Fix Symbiosis logo */
-  setCompanyLogo("Symbiosis", symbiosisLogo, "SIU");
-});
-</script>
- <style>
-/* =========================================================
-   FINAL ROBUST IMAGE FIX
-========================================================= */
-
-/* Profile image */
-.profile-head {
-  align-items: center !important;
-  gap: 20px !important;
-}
-
-.avatar {
-  width: 120px !important;
-  height: 120px !important;
-  min-width: 120px !important;
-  border-radius: 30px !important;
-  overflow: hidden !important;
-  background: #f3f0e8 !important;
-  border: 1px solid var(--line) !important;
-  box-shadow: 0 18px 34px rgba(16,16,16,0.10) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: var(--green) !important;
-  font-family: var(--serif) !important;
-  font-size: 2rem !important;
-}
-
-.avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  display: block !important;
-}
-
-/* Company logo boxes */
-.exp-logo.logo-img {
-  width: 128px !important;
-  height: 70px !important;
-  padding: 12px !important;
-  border-radius: 18px !important;
-  background: #ffffff !important;
-  border: 1px solid rgba(255,255,255,0.20) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
-}
-
-.exp-logo.logo-img img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  display: block !important;
-}
-
-/* Text fallback if image truly not found */
-.exp-logo.text-badge {
-  width: auto !important;
-  min-width: 72px !important;
-  height: 44px !important;
-  padding: 0 16px !important;
-  border-radius: 999px !important;
-  background: rgba(255,255,255,0.12) !important;
-  border: 1px solid rgba(255,255,255,0.20) !important;
-  color: #ffffff !important;
-  font-family: var(--mono) !important;
-  font-size: 0.72rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-/* Make sure logo area does not collapse */
-.exp-card .exp-logo {
-  margin-bottom: 8px !important;
-}
-
-@media (max-width: 620px) {
-  .avatar {
-    width: 92px !important;
-    height: 92px !important;
-    min-width: 92px !important;
-  }
-
-  .exp-logo.logo-img {
-    width: 112px !important;
-    height: 62px !important;
-  }
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  /*
-    This script tries multiple possible filenames.
-    So even if your GitHub file name is slightly different,
-    it has a better chance of working.
-  */
-
-  const PHOTO_CANDIDATES = [
-    "photo.jpg",
-    "Photo.jpg",
-    "photo.jpeg",
-    "Photo.jpeg",
-    "photo.png",
-    "Photo.png",
-    "abhishek.jpg",
-    "Abhishek.jpg",
-    "abhishek.jpeg",
-    "Abhishek.jpeg",
-    "abhishek photo.jpg",
-    "Abhishek photo.jpg",
-    "Abhishek Pal.jpg",
-    "Abhishek Pal.jpeg",
-    "Abhishek Pal.png"
-  ];
-
-  const SPPL_CANDIDATES = [
-    "SPPL-logo.png",
-    "SPPL Logo.png",
-    "sppl-logo.png",
-    "sppl logo.png",
-    "SPPL.png",
-    "sppl.png",
-    "Super Plastronics logo.png",
-    "Super Plastronics Logo.png",
-    "super-plastronics-logo.png",
-    "super plastronics logo.png",
-    "Super Plastronics logo PNG.png",
-    "Super Plastronics logo.jpg",
-    "Super Plastronics logo.jpeg"
-  ];
-
-  const SYMBIOSIS_CANDIDATES = [
-    "symbiosis-logo.png",
-    "Symbiosis-logo.png",
-    "Symbiosis logo.png",
-    "symbiosis logo.png",
-    "Symbiosis Logo.png",
-    "symbiosis.png",
-    "Symbiosis.png",
-    "SIU-logo.png",
-    "SIU logo.png",
-    "siu-logo.png",
-    "siu logo.png",
-    "Symbiosis logo PNG.png",
-    "Symbiosis logo.jpg",
-    "Symbiosis logo.jpeg"
-  ];
-
-  function tryImageSources(img, candidates, fallback) {
-    let index = 0;
-
-    function tryNext() {
-      if (index >= candidates.length) {
-        if (fallback) fallback();
-        return;
-      }
-
-      img.src = candidates[index];
-      index += 1;
-    }
-
-    img.onerror = tryNext;
-    tryNext();
-  }
-
-  /* 1. Fix profile photo */
-  const avatar = document.querySelector(".avatar");
-
-  if (avatar) {
-    avatar.innerHTML = "";
-
-    const photo = document.createElement("img");
-    photo.alt = "Abhishek Pal";
-
-    avatar.appendChild(photo);
-
-    tryImageSources(photo, PHOTO_CANDIDATES, function () {
-      avatar.innerHTML = "AP";
-    });
-  }
-
-  /* Helper: find card by heading */
-  function findExperienceCard(companyName) {
-    let target = null;
-
-    document.querySelectorAll(".exp-card").forEach(function (card) {
-      const heading = card.querySelector("h3");
-      if (!heading) return;
-
-      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
-        target = card;
-      }
-    });
-
-    return target;
-  }
-
-  function setLogoWithCandidates(companyName, candidates, fallbackText) {
-    const card = findExperienceCard(companyName);
-    if (!card) return;
-
-    const oldLogo = card.querySelector(".exp-logo");
-    if (!oldLogo) return;
-
-    oldLogo.className = "exp-logo logo-img";
-    oldLogo.innerHTML = "";
-
-    const img = document.createElement("img");
-    img.alt = companyName + " logo";
-
-    oldLogo.appendChild(img);
-
-    tryImageSources(img, candidates, function () {
-      oldLogo.className = "exp-logo text-badge";
-      oldLogo.textContent = fallbackText;
-    });
-  }
-
-  /* 2. Fix SPPL logo */
-  setLogoWithCandidates("Super Plastronics", SPPL_CANDIDATES, "SPPL");
-
-  /* 3. Fix Symbiosis logo */
-  setLogoWithCandidates("Symbiosis", SYMBIOSIS_CANDIDATES, "SIU");
-});
-</script>
-   <!-- FINAL EXACT IMAGE FIX -->
-<style>
-.avatar {
-  width: 120px !important;
-  height: 120px !important;
-  min-width: 120px !important;
-  border-radius: 30px !important;
-  overflow: hidden !important;
-  background: #f3f0e8 !important;
-  border: 1px solid var(--line) !important;
-  box-shadow: 0 18px 34px rgba(16,16,16,0.10) !important;
-}
-
-.avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  display: block !important;
-}
-
-.exp-logo.logo-img {
-  width: 128px !important;
-  height: 70px !important;
-  padding: 12px !important;
-  border-radius: 18px !important;
-  background: #ffffff !important;
-  border: 1px solid rgba(255,255,255,0.20) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: hidden !important;
-}
-
-.exp-logo.logo-img img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  display: block !important;
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  function findCard(companyName) {
-    let target = null;
-
-    document.querySelectorAll(".exp-card").forEach(function (card) {
-      const heading = card.querySelector("h3");
-      if (!heading) return;
-
-      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
-        target = card;
-      }
-    });
-
-    return target;
-  }
-
-  function setLogo(companyName, fileName, fallbackText) {
-    const card = findCard(companyName);
-    if (!card) return;
-
-    const logo = card.querySelector(".exp-logo");
-    if (!logo) return;
-
-    logo.className = "exp-logo logo-img";
-    logo.innerHTML = `
-      <img src="${fileName}" alt="${companyName} logo"
-           onerror="this.parentElement.className='exp-logo'; this.parentElement.textContent='${fallbackText}';">
-    `;
-  }
-
-  const avatar = document.querySelector(".avatar");
-  if (avatar) {
-    avatar.innerHTML = `
-      <img src="photo.jpg" alt="Abhishek Pal"
-           onerror="this.parentElement.textContent='AP';">
-    `;
-  }
-
-  setLogo("Super Plastronics", "SPPL-logo.png", "SPPL");
-  setLogo("Symbiosis", "symbiosis-logo.png", "SIU");
-});
-</script>
-   <!-- FINAL EXACT FILE NAME FIX -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  function findCard(companyName) {
-    let target = null;
-
-    document.querySelectorAll(".exp-card").forEach(function (card) {
-      const heading = card.querySelector("h3");
-      if (!heading) return;
-
-      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
-        target = card;
-      }
-    });
-
-    return target;
-  }
-
-  function setLogo(companyName, fileName, fallbackText) {
-    const card = findCard(companyName);
-    if (!card) return;
-
-    const logo = card.querySelector(".exp-logo");
-    if (!logo) return;
-
-    logo.className = "exp-logo logo-img";
-    logo.innerHTML = `
-      <img src="${fileName}" alt="${companyName} logo"
-           onerror="this.parentElement.className='exp-logo'; this.parentElement.textContent='${fallbackText}';">
-    `;
-  }
-
-  const avatar = document.querySelector(".avatar");
-  if (avatar) {
-    avatar.innerHTML = `
-      <img src="photo.jpg.jpg" alt="Abhishek Pal"
-           onerror="this.parentElement.textContent='AP';">
-    `;
-  }
-
-  setLogo("Super Plastronics", "SPPL-logo.png.png", "SPPL");
-  setLogo("Symbiosis", "symbiosis-logo.png.png", "SIU");
-});
-</script>
 </body>
 </html>
