@@ -3638,5 +3638,146 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+   <!-- IMAGE DISPLAY FIX PATCH -->
+<style>
+/* =========================================================
+   IMAGE DISPLAY FIX PATCH
+========================================================= */
+
+/* Make profile photo visible and premium */
+.profile-head {
+  align-items: center !important;
+}
+
+.avatar {
+  width: 86px !important;
+  height: 86px !important;
+  min-width: 86px !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  background: var(--bg-2) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: 0 12px 28px rgba(16,16,16,0.10);
+}
+
+.avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+}
+
+/* Bigger, cleaner company logo boxes */
+.exp-logo.logo-img {
+  width: 110px !important;
+  height: 72px !important;
+  border-radius: 18px !important;
+  padding: 12px !important;
+  background: #fff !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.exp-logo.logo-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Hide broken image icon if filename is wrong */
+.exp-logo.logo-img img[src=""],
+.exp-logo.logo-img img:not([src]) {
+  display: none !important;
+}
+
+/* Improve Super Plastronics campaign thumbnails */
+.brand-image-row img {
+  object-fit: cover !important;
+  object-position: center !important;
+  height: 115px !important;
+}
+
+/* Make logos readable on dark experience cards */
+.exp-card .exp-logo.logo-img {
+  margin-bottom: 8px;
+}
+
+/* Mobile cleanup */
+@media (max-width: 620px) {
+  .avatar {
+    width: 78px !important;
+    height: 78px !important;
+    min-width: 78px !important;
+  }
+
+  .exp-logo.logo-img {
+    width: 100px !important;
+    height: 64px !important;
+  }
+}
+</style>
+
+<script>
+/* =========================================================
+   IMAGE DISPLAY FIX SCRIPT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  /*
+    IMPORTANT:
+    These filenames must exactly match your GitHub uploaded files.
+    If your file names are different, change them here.
+  */
+
+  const userPhoto = "photo.jpg";
+
+  const aerohyreLogo = "aerohyre logo PNG.jpg";
+  const cashifyLogo = "Cashify logo PNG.png";
+  const tyrooLogo = "Tyroo logo PNG.png";
+
+  const superPlastronicsLogo = "Super Plastronics logo.png";
+  const symbiosisLogo = "Symbiosis logo.png";
+
+  /* Fix profile photo */
+  const avatar = document.querySelector(".avatar");
+  if (avatar) {
+    avatar.innerHTML = `
+      <!-- Add your photo: save your headshot as photo.jpg in the same folder as this file -->
+      <img src="${userPhoto}" alt="Abhishek Pal">
+    `;
+  }
+
+  /* Replace company logos safely */
+  function setLogo(companyName, imageSrc, fallbackText) {
+    document.querySelectorAll(".exp-card").forEach(function (card) {
+      const heading = card.querySelector("h3");
+      if (!heading) return;
+
+      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
+        const logo = card.querySelector(".exp-logo");
+        if (!logo) return;
+
+        logo.classList.add("logo-img");
+
+        logo.innerHTML = `
+          <img src="${imageSrc}" alt="${companyName} logo" 
+               onerror="this.style.display='none'; this.parentElement.textContent='${fallbackText}';">
+        `;
+      }
+    });
+  }
+
+  setLogo("Aerohyre", aerohyreLogo, "AH");
+  setLogo("Cashify", cashifyLogo, "CF");
+  setLogo("Tyroo", tyrooLogo, "TY");
+  setLogo("Super Plastronics", superPlastronicsLogo, "SP");
+  setLogo("Symbiosis", symbiosisLogo, "SI");
+});
+</script>
 </body>
 </html>
