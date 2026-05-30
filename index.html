@@ -3009,10 +3009,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <style>
 /* =========================================================
   </script>
-   <!-- SAFE PORTFOLIO PATCH: PHOTO, LOGOS, LINKS, CASE STUDY UPDATES, VISUALS -->
 <style>
 /* =========================================================
-   SAFE PORTFOLIO PATCH STYLES
 ========================================================= */
 
 .avatar {
@@ -3638,10 +3636,8 @@ const superPlastronicsLogo = "SPPL-logo.png";
   }
 });
 </script>
-   <!-- IMAGE DISPLAY FIX PATCH -->
 <style>
 /* =========================================================
-   IMAGE DISPLAY FIX PATCH
 ========================================================= */
 
 /* Make profile photo visible and premium */
@@ -4668,8 +4664,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setCompanyLogo("Symbiosis", symbiosisLogo, "SIU");
 });
 </script>
-   <!-- FINAL ROBUST IMAGE FIX: PHOTO + SPPL + SYMBIOSIS -->
-<style>
+ <style>
 /* =========================================================
    FINAL ROBUST IMAGE FIX
 ========================================================= */
@@ -4899,6 +4894,92 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* 3. Fix Symbiosis logo */
   setLogoWithCandidates("Symbiosis", SYMBIOSIS_CANDIDATES, "SIU");
+});
+</script>
+   <!-- FINAL EXACT IMAGE FIX -->
+<style>
+.avatar {
+  width: 120px !important;
+  height: 120px !important;
+  min-width: 120px !important;
+  border-radius: 30px !important;
+  overflow: hidden !important;
+  background: #f3f0e8 !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: 0 18px 34px rgba(16,16,16,0.10) !important;
+}
+
+.avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+}
+
+.exp-logo.logo-img {
+  width: 128px !important;
+  height: 70px !important;
+  padding: 12px !important;
+  border-radius: 18px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.20) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+.exp-logo.logo-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function findCard(companyName) {
+    let target = null;
+
+    document.querySelectorAll(".exp-card").forEach(function (card) {
+      const heading = card.querySelector("h3");
+      if (!heading) return;
+
+      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
+        target = card;
+      }
+    });
+
+    return target;
+  }
+
+  function setLogo(companyName, fileName, fallbackText) {
+    const card = findCard(companyName);
+    if (!card) return;
+
+    const logo = card.querySelector(".exp-logo");
+    if (!logo) return;
+
+    logo.className = "exp-logo logo-img";
+    logo.innerHTML = `
+      <img src="${fileName}" alt="${companyName} logo"
+           onerror="this.parentElement.className='exp-logo'; this.parentElement.textContent='${fallbackText}';">
+    `;
+  }
+
+  const avatar = document.querySelector(".avatar");
+  if (avatar) {
+    avatar.innerHTML = `
+      <img src="photo.jpg" alt="Abhishek Pal"
+           onerror="this.parentElement.textContent='AP';">
+    `;
+  }
+
+  setLogo("Super Plastronics", "SPPL-logo.png", "SPPL");
+  setLogo("Symbiosis", "symbiosis-logo.png", "SIU");
 });
 </script>
 </body>
