@@ -2423,5 +2423,587 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+   <!-- FINAL DATA VISUALS FOR CASE STUDIES -->
+<style>
+/* =========================================================
+   CASE STUDY DATA VISUALS
+========================================================= */
+
+.project-data-viz {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.viz-title {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--green-2);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.viz-card {
+  background: rgba(255,255,255,0.82);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 12px 32px rgba(16,16,16,0.05);
+}
+
+.viz-card.dark {
+  background: #101714;
+  color: #fff;
+  border-color: rgba(255,255,255,0.1);
+}
+
+.viz-card h5 {
+  font-size: 0.88rem;
+  margin-bottom: 12px;
+  color: inherit;
+}
+
+.viz-card p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.viz-card.dark p {
+  color: rgba(255,255,255,0.62);
+}
+
+.line-chart-box {
+  height: 180px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    linear-gradient(to top, rgba(44,106,80,0.08), transparent),
+    repeating-linear-gradient(to right, transparent, transparent 48px, rgba(16,16,16,0.05) 49px),
+    repeating-linear-gradient(to bottom, transparent, transparent 44px, rgba(16,16,16,0.05) 45px);
+}
+
+.line-chart-box.dark {
+  background:
+    linear-gradient(to top, rgba(152,215,184,0.10), transparent),
+    repeating-linear-gradient(to right, transparent, transparent 48px, rgba(255,255,255,0.06) 49px),
+    repeating-linear-gradient(to bottom, transparent, transparent 44px, rgba(255,255,255,0.06) 45px);
+}
+
+.line-chart-box svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.chart-caption-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.viz-card.dark .chart-caption-row {
+  color: rgba(255,255,255,0.52);
+}
+
+.bar-chart {
+  display: grid;
+  gap: 12px;
+}
+
+.bar-item {
+  display: grid;
+  grid-template-columns: 92px 1fr 48px;
+  gap: 10px;
+  align-items: center;
+}
+
+.bar-item span {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.viz-card.dark .bar-item span {
+  color: rgba(255,255,255,0.62);
+}
+
+.bar-track {
+  height: 9px;
+  background: rgba(16,16,16,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.viz-card.dark .bar-track {
+  background: rgba(255,255,255,0.12);
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--green), var(--green-2), var(--gold));
+}
+
+.blue-fill {
+  background: linear-gradient(90deg, #172B4D, #315B91, #7DA7E8);
+}
+
+.gold-fill {
+  background: linear-gradient(90deg, #7A4E12, #B9822B, #E7B75B);
+}
+
+.funnel-viz {
+  display: grid;
+  gap: 8px;
+}
+
+.funnel-step {
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: rgba(44,106,80,0.09);
+  border: 1px solid rgba(44,106,80,0.16);
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+
+.funnel-step:nth-child(2) {
+  margin-left: 16px;
+}
+
+.funnel-step:nth-child(3) {
+  margin-left: 32px;
+}
+
+.funnel-step:nth-child(4) {
+  margin-left: 48px;
+}
+
+.funnel-step strong {
+  font-size: 0.85rem;
+}
+
+.funnel-step span {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--green-2);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 16px;
+  font-size: 0.82rem;
+}
+
+.data-table th {
+  text-align: left;
+  background: var(--green);
+  color: #fff;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.data-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  background: rgba(255,255,255,0.72);
+  vertical-align: top;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.network-viz {
+  min-height: 190px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at center, rgba(44,106,80,0.14), transparent 42%),
+    rgba(255,255,255,0.72);
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.network-viz::before,
+.network-viz::after {
+  content: "";
+  position: absolute;
+  background: rgba(44,106,80,0.22);
+  height: 1px;
+  width: 70%;
+  left: 15%;
+  top: 50%;
+  transform: rotate(18deg);
+}
+
+.network-viz::after {
+  transform: rotate(-18deg);
+}
+
+.net-node {
+  position: absolute;
+  width: 72px;
+  height: 54px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 24px rgba(16,16,16,0.08);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  z-index: 2;
+  text-align: center;
+  padding: 6px;
+}
+
+.net-node.main {
+  width: 86px;
+  height: 64px;
+  background: var(--green);
+  color: #fff;
+  left: calc(50% - 43px);
+  top: calc(50% - 32px);
+}
+
+.creator-mix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+}
+
+.creator-stat {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  padding: 14px;
+  background: rgba(255,255,255,0.78);
+}
+
+.creator-stat strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.creator-stat span {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 900px) {
+  .viz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .creator-mix {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+/* =========================================================
+   ADD DATA VISUALS TO THE 3 CASE STUDIES
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  function createAerohyreVisuals() {
+    return `
+      <div class="project-data-viz">
+        <div class="viz-title">Data story</div>
+
+        <div class="viz-grid">
+          <div class="viz-card">
+            <h5>MAU growth trajectory</h5>
+            <div class="line-chart-box">
+              <svg viewBox="0 0 500 180" preserveAspectRatio="none">
+                <path d="M0,158 C60,154 90,145 130,132 C175,118 200,106 245,92 C292,76 320,52 370,43 C425,31 458,18 500,12"
+                  fill="none" stroke="#315B91" stroke-width="5" stroke-linecap="round"/>
+                <path d="M0,158 C60,154 90,145 130,132 C175,118 200,106 245,92 C292,76 320,52 370,43 C425,31 458,18 500,12 L500,180 L0,180 Z"
+                  fill="rgba(49,91,145,0.16)"/>
+              </svg>
+            </div>
+            <div class="chart-caption-row">
+              <span>Launch</span>
+              <span>Month 6 · 165K+ MAUs</span>
+            </div>
+          </div>
+
+          <div class="viz-card">
+            <h5>Acquisition funnel</h5>
+            <div class="funnel-viz">
+              <div class="funnel-step"><strong>Awareness</strong><span>Paid + SEO</span></div>
+              <div class="funnel-step"><strong>Traffic</strong><span>Search + Meta</span></div>
+              <div class="funnel-step"><strong>Sign-ups</strong><span>8K+</span></div>
+              <div class="funnel-step"><strong>Retention</strong><span>Job alerts</span></div>
+            </div>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>What changed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MAUs</td>
+              <td>0</td>
+              <td>165K+</td>
+              <td>Category launch + acquisition system</td>
+            </tr>
+            <tr>
+              <td>CVR</td>
+              <td>~1.8%</td>
+              <td>~3.9%</td>
+              <td>Landing-page and form experiments</td>
+            </tr>
+            <tr>
+              <td>ROAS</td>
+              <td>1.8×</td>
+              <td>3.1×</td>
+              <td>Audience, creative, and keyword optimization</td>
+            </tr>
+            <tr>
+              <td>CAC</td>
+              <td>Baseline</td>
+              <td>−32%</td>
+              <td>Segmentation + retargeting + funnel cleanup</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function createQledVisuals() {
+    return `
+      <div class="project-data-viz">
+        <div class="viz-title">Campaign performance view</div>
+
+        <div class="viz-grid">
+          <div class="viz-card">
+            <h5>Media and trust engine</h5>
+            <div class="bar-chart">
+              <div class="bar-item">
+                <span>Creators</span>
+                <div class="bar-track"><div class="bar-fill blue-fill" style="width: 92%"></div></div>
+                <span>100+</span>
+              </div>
+              <div class="bar-item">
+                <span>Reach</span>
+                <div class="bar-track"><div class="bar-fill blue-fill" style="width: 88%"></div></div>
+                <span>12M+</span>
+              </div>
+              <div class="bar-item">
+                <span>Visits</span>
+                <div class="bar-track"><div class="bar-fill blue-fill" style="width: 76%"></div></div>
+                <span>180K</span>
+              </div>
+              <div class="bar-item">
+                <span>Sales</span>
+                <div class="bar-track"><div class="bar-fill blue-fill" style="width: 58%"></div></div>
+                <span>+22%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="viz-card">
+            <h5>Creator tier mix</h5>
+            <div class="creator-mix">
+              <div class="creator-stat">
+                <strong>5</strong>
+                <span>Large tech reviewers</span>
+              </div>
+              <div class="creator-stat">
+                <strong>25</strong>
+                <span>Mid-tier creators</span>
+              </div>
+              <div class="creator-stat">
+                <strong>70+</strong>
+                <span>Micro creators</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Launch lever</th>
+              <th>Role</th>
+              <th>Signal</th>
+              <th>Recruiter takeaway</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Creators</td>
+              <td>Trust building</td>
+              <td>100+ activated</td>
+              <td>Built third-party validation before conversion push</td>
+            </tr>
+            <tr>
+              <td>Paid retargeting</td>
+              <td>Conversion</td>
+              <td>Warm audience campaigns</td>
+              <td>Connected brand activity to performance outcomes</td>
+            </tr>
+            <tr>
+              <td>Website traffic</td>
+              <td>Consideration</td>
+              <td>180K+ visits</td>
+              <td>Created high-intent product discovery</td>
+            </tr>
+            <tr>
+              <td>Online sales</td>
+              <td>Business result</td>
+              <td>+22% uplift</td>
+              <td>Launch influenced measurable commercial movement</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function createCashifyVisuals() {
+    return `
+      <div class="project-data-viz">
+        <div class="viz-title">Partner ecosystem performance</div>
+
+        <div class="viz-grid">
+          <div class="viz-card">
+            <h5>Revenue uplift</h5>
+            <div class="line-chart-box">
+              <svg viewBox="0 0 500 180" preserveAspectRatio="none">
+                <path d="M0,135 C55,130 82,126 120,120 C170,112 205,105 250,92 C305,78 350,62 405,44 C450,30 475,22 500,18"
+                  fill="none" stroke="#B9822B" stroke-width="5" stroke-linecap="round"/>
+                <path d="M0,135 C55,130 82,126 120,120 C170,112 205,105 250,92 C305,78 350,62 405,44 C450,30 475,22 500,18 L500,180 L0,180 Z"
+                  fill="rgba(185,130,43,0.18)"/>
+              </svg>
+            </div>
+            <div class="chart-caption-row">
+              <span>Baseline</span>
+              <span>₹12L+ / month · +22%</span>
+            </div>
+          </div>
+
+          <div class="viz-card">
+            <h5>Affiliate ecosystem map</h5>
+            <div class="network-viz">
+              <div class="net-node main">Cashify</div>
+              <div class="net-node" style="left: 8%; top: 12%;">Affiliates</div>
+              <div class="net-node" style="right: 8%; top: 12%;">Creators</div>
+              <div class="net-node" style="left: 8%; bottom: 12%;">Offers</div>
+              <div class="net-node" style="right: 8%; bottom: 12%;">Revenue</div>
+            </div>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Growth lever</th>
+              <th>Scale</th>
+              <th>Outcome</th>
+              <th>What it proves</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Partner accounts</td>
+              <td>50+</td>
+              <td>₹12L+ monthly revenue</td>
+              <td>Can manage revenue-driving partnerships</td>
+            </tr>
+            <tr>
+              <td>Creator activation</td>
+              <td>100+</td>
+              <td>30M+ impressions</td>
+              <td>Can connect creator ecosystems to acquisition</td>
+            </tr>
+            <tr>
+              <td>Partner customers</td>
+              <td>Affiliate channel</td>
+              <td>+40% lift</td>
+              <td>Improved acquisition contribution</td>
+            </tr>
+            <tr>
+              <td>Revenue productivity</td>
+              <td>Existing base</td>
+              <td>+22% uplift</td>
+              <td>Improved output without depending only on new partners</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  document.querySelectorAll(".case-card").forEach(function (card) {
+    const title = card.querySelector("h3");
+    const content = card.querySelector(".case-content");
+
+    if (!title || !content || content.querySelector(".project-data-viz")) return;
+
+    const titleText = title.textContent.toLowerCase();
+
+    if (titleText.includes("aviation hiring growth engine")) {
+      content.insertAdjacentHTML("beforeend", createAerohyreVisuals());
+    }
+
+    if (titleText.includes("google qled tv")) {
+      content.insertAdjacentHTML("beforeend", createQledVisuals());
+    }
+
+    if (titleText.includes("cashify")) {
+      content.insertAdjacentHTML("beforeend", createCashifyVisuals());
+    }
+  });
+});
+</script>
 </body>
 </html>
