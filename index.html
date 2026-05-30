@@ -2090,6 +2090,485 @@ const observer = new IntersectionObserver(
 
 revealEls.forEach(el => observer.observe(el));
 </script>
+  <!-- FINAL HIRING MANAGER FEEDBACK PATCH -->
+<style>
+/* =========================================================
+   FINAL HIRING MANAGER FEEDBACK PATCH
+   Safe additive styles only
+========================================================= */
+
+/* Brands row */
+.brands-row-section {
+  background: rgba(255,255,255,0.58);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 34px 0;
+}
+
+.brands-row-wrap {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.brands-row-title {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 18px;
+}
+
+.brands-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-badge {
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.78);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Certifications */
+.certifications-section {
+  padding: 90px 0 40px;
+}
+
+.certifications-grid {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.cert-card {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 12px 34px rgba(16,16,16,0.05);
+}
+
+.cert-card span {
+  display: inline-flex;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green-2);
+  margin-bottom: 12px;
+}
+
+.cert-card h3 {
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.cert-card p {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Operating system examples */
+.system-example {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem !important;
+  color: var(--green-2) !important;
+  line-height: 1.5 !important;
+}
+
+/* Proof placeholders */
+.proof-placeholder {
+  margin-top: 22px;
+  min-height: 150px;
+  border-radius: 22px;
+  border: 1px dashed rgba(24,58,46,0.32);
+  background:
+    linear-gradient(135deg, rgba(44,106,80,0.08), rgba(185,130,43,0.06)),
+    rgba(255,255,255,0.62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Company logo/photo correction */
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.exp-logo.logo-img {
+  width: 128px !important;
+  height: 70px !important;
+  padding: 12px !important;
+  border-radius: 18px !important;
+  background: #fff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.exp-logo.logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .certifications-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-badge {
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  /* =========================================================
+     1. FIX LINKS
+  ========================================================= */
+
+  const RESUME_LINK = "resume.pdf.pdf";
+  const LINKEDIN_LINK = "https://www.linkedin.com/in/abhishek-pal-1292971a5/";
+
+  document.querySelectorAll("a").forEach(function (link) {
+    const text = link.textContent.trim().toLowerCase();
+    const href = link.getAttribute("href");
+
+    if (text.includes("resume") || text.includes("download resume")) {
+      link.setAttribute("href", RESUME_LINK);
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+
+    if (
+      text.includes("linkedin") ||
+      href === "https://linkedin.com" ||
+      href === "http://linkedin.com/" ||
+      href === "linkedin.com"
+    ) {
+      link.setAttribute("href", LINKEDIN_LINK);
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+
+    if (text.includes("email me")) {
+      link.setAttribute("href", "mailto:abhishekkpal1998@gmail.com");
+    }
+  });
+
+  /* =========================================================
+     2. FIX PHOTO + SPPL + SYMBIOSIS LOGOS
+  ========================================================= */
+
+  const avatar = document.querySelector(".avatar");
+  if (avatar) {
+    avatar.innerHTML = `
+      <img src="photo.jpg.jpg" alt="Abhishek Pal"
+           onerror="this.style.display='none'; this.parentElement.textContent='AP';">
+    `;
+  }
+
+  function findExperienceCard(companyName) {
+    let target = null;
+
+    document.querySelectorAll(".exp-card").forEach(function (card) {
+      const heading = card.querySelector("h3");
+      if (!heading) return;
+
+      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
+        target = card;
+      }
+    });
+
+    return target;
+  }
+
+  function setCompanyLogo(companyName, fileName, fallbackText) {
+    const card = findExperienceCard(companyName);
+    if (!card) return;
+
+    const logo = card.querySelector(".exp-logo");
+    if (!logo) return;
+
+    logo.className = "exp-logo logo-img";
+    logo.innerHTML = `
+      <img src="${fileName}" alt="${companyName} logo"
+           onerror="this.style.display='none'; this.parentElement.className='exp-logo'; this.parentElement.textContent='${fallbackText}';">
+    `;
+  }
+
+  setCompanyLogo("Super Plastronics", "SPPL-logo.png.png", "SPPL");
+  setCompanyLogo("Symbiosis", "symbiosis-logo.png.png", "SIU");
+
+  /* =========================================================
+     3. REWRITE HERO SUBHEADLINE
+  ========================================================= */
+
+  const heroCopy = document.querySelector(".hero-copy");
+  if (heroCopy) {
+    heroCopy.textContent =
+      "3 years building full-funnel growth systems across aviation tech, consumer electronics, re-commerce, and AdTech — from zero-MAU cold starts to category-defining launches. I own the number, not just the channel.";
+  }
+
+  /* =========================================================
+     4. REWRITE ABOUT SECTION
+  ========================================================= */
+
+  const aboutCopy = document.querySelector(".about-copy");
+  if (aboutCopy) {
+    aboutCopy.innerHTML = `
+      <p>
+        I came from mathematics — which means I see marketing as a system to be optimized, not a story to be told. That's shaped how I work: I start with the constraint, sequence the funnel, track what others ignore, and scale what actually converts. Three years in, I've built growth engines for a marketplace starting from zero, launched consumer electronics against category leaders, and managed partner ecosystems at ₹12L+ monthly revenue. I'm not the marketer who runs campaigns. I'm the one who builds the system behind them.
+      </p>
+    `;
+  }
+
+  /* =========================================================
+     5. REWRITE EXPERIENCE SUMMARIES
+  ========================================================= */
+
+  function updateExperienceSummary(companyName, newSummary) {
+    const card = findExperienceCard(companyName);
+    if (!card) return;
+
+    const paragraph = card.querySelector("p");
+    if (paragraph) paragraph.textContent = newSummary;
+  }
+
+  updateExperienceSummary(
+    "Aerohyre",
+    "Sole growth hire at a zero-to-one aviation hiring marketplace. Built the entire acquisition infrastructure — Google Search, Meta, YouTube retargeting, SEO landing pages, GA4 tracking — from scratch. Scaled to 165K MAUs and 8K+ sign-ups in under 12 months while optimizing CAC from cold-start baselines to 3.1× ROAS."
+  );
+
+  updateExperienceSummary(
+    "Super Plastronics",
+    "Led launch marketing for licensed consumer electronics (including Google QLED TV) across brand, performance, and creator channels. Managed 100+ creator relationships, 12M+ launch impressions, and a paid-plus-creator funnel that drove 22% sales uplift at online retail partners."
+  );
+
+  updateExperienceSummary(
+    "Cashify",
+    "Owned affiliate and creator performance across 50+ partner accounts for one of India's largest re-commerce platforms. Segmented partner base by revenue headroom, reactivated dormant accounts, and coordinated offer-led campaigns — contributing to ₹12L+ monthly partner-driven revenue."
+  );
+
+  updateExperienceSummary(
+    "Tyroo",
+    "Developed GTM positioning and SEO-led growth strategy for APAC clients across BFSI, Retail, and Gaming verticals. Identified 85+ target keywords and contributed to $250K+ in pipeline influence through search-led content and competitive positioning."
+  );
+
+  /* =========================================================
+     6. REWRITE CTA SECTION
+  ========================================================= */
+
+  const contactCopy = document.querySelector(".contact-card p");
+  if (contactCopy) {
+    contactCopy.textContent =
+      "If you're building something where growth has to earn its budget — I want to talk. I don't just run campaigns. I build the system, own the reporting, and translate marketing activity into business outcomes. Let's find out if that's useful to you.";
+  }
+
+  /* =========================================================
+     7. REWRITE RECRUITER SHORTCUT
+  ========================================================= */
+
+  const shortlistCards = document.querySelectorAll(".short-card");
+
+  const shortlistData = [
+    {
+      title: "Full-funnel ownership, not just channel management",
+      sub: "From zero-MAU acquisition to CRO, creator strategy, SEO, and affiliate ecosystems — I've operated across the entire funnel, not just one layer of it."
+    },
+    {
+      title: "Built for ambiguity and cold starts",
+      sub: "At Aerohyre, there was no historical CAC, no playbook, and no category precedent. I built the tracking, the funnel, and the reporting system from scratch."
+    },
+    {
+      title: "Brand trust + performance efficiency, not one or the other",
+      sub: "At Super Plastronics, I sequenced creator education before paid retargeting — because the data showed trust gaps, not awareness gaps."
+    },
+    {
+      title: "I report in business language, not marketing vanity metrics",
+      sub: "CAC, CVR, ROAS, pipeline influence, revenue contribution — I translate channel activity into numbers that founders and operators actually use."
+    }
+  ];
+
+  shortlistCards.forEach(function (card, index) {
+    const data = shortlistData[index];
+    if (!data) return;
+
+    const title = card.querySelector("h3");
+    const para = card.querySelector("p");
+
+    if (title) title.textContent = data.title;
+    if (para) para.textContent = data.sub;
+  });
+
+  /* =========================================================
+     8. ADD BRANDS ROW AFTER METRICS
+  ========================================================= */
+
+  const metricsBand = document.querySelector(".metrics-band");
+
+  if (metricsBand && !document.querySelector(".brands-row-section")) {
+    const brandsSection = document.createElement("section");
+    brandsSection.className = "brands-row-section";
+
+    brandsSection.innerHTML = `
+      <div class="brands-row-wrap">
+        <div class="brands-row-title">Brands I've worked with</div>
+        <div class="brands-row">
+          <div class="brand-badge">Aerohyre</div>
+          <div class="brand-badge">Super Plastronics</div>
+          <div class="brand-badge">Cashify</div>
+          <div class="brand-badge">Tyroo</div>
+          <div class="brand-badge">Symbiosis</div>
+        </div>
+      </div>
+    `;
+
+    metricsBand.insertAdjacentElement("afterend", brandsSection);
+  }
+
+  /* =========================================================
+     9. ADD CERTIFICATIONS SECTION
+  ========================================================= */
+
+  const capabilitiesSection = document.querySelector("#capabilities");
+
+  if (capabilitiesSection && !document.querySelector(".certifications-section")) {
+    const certSection = document.createElement("section");
+    certSection.className = "certifications-section";
+
+    certSection.innerHTML = `
+      <div class="container">
+        <div class="reveal visible">
+          <div class="eyebrow">Certifications & Tools</div>
+          <h2 class="section-title">Certifications & Tools</h2>
+          <p class="section-sub">
+            Practical growth stack across acquisition, analytics, search, reporting, and performance optimization.
+          </p>
+        </div>
+
+        <div class="certifications-grid">
+          <div class="cert-card">
+            <span>Certification</span>
+            <h3>Google Ads Search Certification</h3>
+            <p>In Progress</p>
+          </div>
+
+          <div class="cert-card">
+            <span>Certification</span>
+            <h3>Meta Blueprint</h3>
+            <p>In Progress</p>
+          </div>
+
+          <div class="cert-card">
+            <span>Certification</span>
+            <h3>GA4 / Google Analytics Certification</h3>
+            <p>Certification / working proficiency.</p>
+          </div>
+
+          <div class="cert-card">
+            <span>Tools proficiency</span>
+            <h3>GA4 · GTM · Meta Ads Manager · Google Ads · SEMrush · Ahrefs · Looker Studio · Power BI</h3>
+            <p>Used across tracking, paid media, SEO, reporting, and funnel diagnostics.</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    capabilitiesSection.insertAdjacentElement("beforebegin", certSection);
+  }
+
+  /* =========================================================
+     10. UPDATE OPERATING SYSTEM EXAMPLES
+  ========================================================= */
+
+  const systemExamples = [
+    "Example: At Aerohyre, the constraint was candidate liquidity, not employer demand — sequencing acquisition accordingly changed the entire GTM motion.",
+    "Example: At Cashify, segmenting 50+ affiliates by revenue headroom vs. activity level revealed which accounts needed reactivation vs. upsell.",
+    "Example: At Aerohyre, built GA4 + GTM tracking, UTM taxonomy, and weekly funnel dashboards before scaling any paid spend.",
+    "Example: At Super Plastronics, tested creator tier mix (micro vs. macro) and found mid-tier creators drove 3× better qualified traffic than top-tier.",
+    "Example: Moved budget from broad-match to exact/phrase match after early experiments — ROAS improved from sub-1× to 3.1× over 3 months."
+  ];
+
+  document.querySelectorAll(".system-step").forEach(function (step, index) {
+    if (!systemExamples[index]) return;
+    if (step.querySelector(".system-example")) return;
+
+    const example = document.createElement("p");
+    example.className = "system-example";
+    example.textContent = systemExamples[index];
+
+    step.appendChild(example);
+  });
+
+  /* =========================================================
+     11. ADD VISUAL PROOF PLACEHOLDERS
+  ========================================================= */
+
+  document.querySelectorAll(".case-card").forEach(function (card, index) {
+    const content = card.querySelector(".case-content");
+    if (!content) return;
+    if (content.querySelector(".proof-placeholder")) return;
+
+    const placeholder = document.createElement("div");
+    placeholder.className = "proof-placeholder";
+
+    if (index === 1 || index === 2) {
+      placeholder.textContent =
+        "[Campaign Performance Report — Blurred for Confidentiality]";
+    } else {
+      placeholder.textContent =
+        "[Dashboard Screenshot — Available on Request]";
+    }
+
+    const resultRow = content.querySelector(".result-row");
+    if (resultRow) {
+      resultRow.insertAdjacentElement("afterend", placeholder);
+    } else {
+      content.appendChild(placeholder);
+    }
+  });
+});
+</script>
 
 </body>
 </html>
