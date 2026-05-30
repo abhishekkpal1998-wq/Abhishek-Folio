@@ -4528,5 +4528,145 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+   <!-- PHOTO + SPPL + SYMBIOSIS LOGO FIX ONLY -->
+<style>
+/* Profile photo fix */
+.profile-head {
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+.avatar {
+  width: 112px !important;
+  height: 112px !important;
+  min-width: 112px !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  background: #F3F0E8 !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: 0 18px 34px rgba(16,16,16,0.10) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+  background: #F3F0E8 !important;
+}
+
+/* Logo box fix */
+.exp-logo.logo-img {
+  width: 118px !important;
+  height: 62px !important;
+  padding: 12px !important;
+  border-radius: 18px !important;
+  background: #fff !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.exp-logo.logo-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Fallback badge if logo image fails */
+.exp-logo.text-badge {
+  width: auto !important;
+  min-width: 64px !important;
+  height: 42px !important;
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  color: #fff !important;
+  font-family: var(--mono) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 620px) {
+  .avatar {
+    width: 90px !important;
+    height: 90px !important;
+    min-width: 90px !important;
+  }
+
+  .exp-logo.logo-img {
+    width: 105px !important;
+    height: 58px !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const userPhoto = "photo.jpg";
+  const spplLogo = "SPPL-logo.png";
+  const symbiosisLogo = "symbiosis-logo.png";
+
+  /* 1. Fix profile photo */
+  const avatar = document.querySelector(".avatar");
+
+  if (avatar) {
+    avatar.innerHTML = `
+      <!-- Add your photo: save your headshot as photo.jpg in the same folder as this file -->
+      <img src="${userPhoto}" alt="Abhishek Pal"
+           onerror="this.style.display='none'; this.parentElement.textContent='AP';">
+    `;
+  }
+
+  /* Helper: find experience card by company heading */
+  function findExperienceCard(companyName) {
+    let targetCard = null;
+
+    document.querySelectorAll(".exp-card").forEach(function (card) {
+      const heading = card.querySelector("h3");
+      if (!heading) return;
+
+      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
+        targetCard = card;
+      }
+    });
+
+    return targetCard;
+  }
+
+  /* Helper: set logo image with fallback */
+  function setCompanyLogo(companyName, imageSrc, fallbackText) {
+    const card = findExperienceCard(companyName);
+    if (!card) return;
+
+    const logoBox = card.querySelector(".exp-logo");
+    if (!logoBox) return;
+
+    logoBox.className = "exp-logo logo-img";
+    logoBox.innerHTML = `
+      <img src="${imageSrc}" alt="${companyName} logo"
+           onerror="this.style.display='none'; this.parentElement.className='exp-logo text-badge'; this.parentElement.textContent='${fallbackText}';">
+    `;
+  }
+
+  /* 2. Fix SPPL logo */
+  setCompanyLogo("Super Plastronics", spplLogo, "SPPL");
+
+  /* 3. Fix Symbiosis logo */
+  setCompanyLogo("Symbiosis", symbiosisLogo, "SIU");
+});
+</script>
 </body>
 </html>
