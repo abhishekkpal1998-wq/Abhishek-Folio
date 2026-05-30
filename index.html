@@ -2222,6 +2222,206 @@ function copyEmail() {
   alert("Email copied");
 }
 </script>
+<!-- FINAL PORTFOLIO ASSET + LINK UPDATES -->
+<style>
+/* Resume / LinkedIn / Brand asset updates */
 
+.logo-img {
+  background: rgba(255,255,255,0.92) !important;
+  padding: 7px !important;
+  width: 82px !important;
+  height: 52px !important;
+  overflow: hidden;
+}
+
+.logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-image-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.brand-image-row img {
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.qled-visuals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.qled-visuals img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+}
+
+.aerohyre-logo-card {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.aerohyre-logo-card img {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 620px) {
+  .brand-image-row,
+  .qled-visuals {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-image-row img,
+  .qled-visuals img {
+    height: 150px;
+  }
+}
+</style>
+
+<script>
+/* =========================================================
+   FINAL PORTFOLIO UPDATES
+   Resume, LinkedIn, logos, and campaign images
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const resumeFile = "resume.pdf";
+  const linkedInUrl = "https://www.linkedin.com/in/abhishek-pal-1292971a5/";
+
+  const cashifyLogo = "Cashify logo PNG.png";
+  const tyrooLogo = "Tyroo logo PNG.png";
+  const aerohyreLogo = "aerohyre logo PNG.jpg";
+
+  const superPlastronicsImg1 = "Super Plastronics tv 1 JPEG.jpeg";
+  const superPlastronicsImg2 = "Super Plastronics TV 2 JPEG.jpeg";
+
+  /* 1. Update all Resume / Download Resume buttons */
+  document.querySelectorAll("a").forEach(function (link) {
+    const text = link.textContent.toLowerCase();
+
+    if (text.includes("resume")) {
+      link.setAttribute("href", resumeFile);
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+
+    if (text.includes("linkedin")) {
+      link.setAttribute("href", linkedInUrl);
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+  });
+
+  /* 2. Helper function to replace experience logos */
+  function replaceLogo(companyTitle, imageSrc, altText) {
+    const cards = document.querySelectorAll(".exp-card");
+
+    cards.forEach(function (card) {
+      const heading = card.querySelector("h3");
+
+      if (heading && heading.textContent.trim().toLowerCase() === companyTitle.toLowerCase()) {
+        const logo = card.querySelector(".exp-logo");
+
+        if (logo) {
+          logo.classList.add("logo-img");
+          logo.innerHTML = `<img src="${imageSrc}" alt="${altText}">`;
+        }
+      }
+    });
+  }
+
+  replaceLogo("Aerohyre", aerohyreLogo, "Aerohyre logo");
+  replaceLogo("Cashify", cashifyLogo, "Cashify logo");
+  replaceLogo("Tyroo", tyrooLogo, "Tyroo logo");
+
+  /* 3. Add Super Plastronics TV images inside experience card */
+  document.querySelectorAll(".exp-card").forEach(function (card) {
+    const heading = card.querySelector("h3");
+
+    if (heading && heading.textContent.trim().toLowerCase() === "super plastronics") {
+      if (!card.querySelector(".brand-image-row")) {
+        const paragraph = card.querySelector("p");
+
+        if (paragraph) {
+          const imageRow = document.createElement("div");
+          imageRow.className = "brand-image-row";
+          imageRow.innerHTML = `
+            <img src="${superPlastronicsImg1}" alt="Super Plastronics QLED TV campaign visual">
+            <img src="${superPlastronicsImg2}" alt="Super Plastronics QLED TV launch visual">
+          `;
+
+          paragraph.parentNode.insertBefore(imageRow, paragraph);
+        }
+      }
+    }
+  });
+
+  /* 4. Add Aerohyre logo inside Aerohyre case study visual */
+  document.querySelectorAll(".case-visual").forEach(function (visual) {
+    const label = visual.querySelector(".visual-label");
+
+    if (
+      label &&
+      label.textContent.toLowerCase().includes("aviation growth dashboard") &&
+      !visual.querySelector(".aerohyre-logo-card")
+    ) {
+      const logoCard = document.createElement("div");
+      logoCard.className = "aerohyre-logo-card";
+      logoCard.innerHTML = `<img src="${aerohyreLogo}" alt="Aerohyre logo">`;
+
+      label.insertAdjacentElement("afterend", logoCard);
+    }
+  });
+
+  /* 5. Add Super Plastronics TV images inside Google QLED case study */
+  document.querySelectorAll(".case-visual").forEach(function (visual) {
+    const label = visual.querySelector(".visual-label");
+
+    if (
+      label &&
+      label.textContent.toLowerCase().includes("creator launch system") &&
+      !visual.querySelector(".qled-visuals")
+    ) {
+      const creatorWall = visual.querySelector(".creator-wall");
+
+      if (creatorWall) {
+        const qledVisuals = document.createElement("div");
+        qledVisuals.className = "qled-visuals";
+        qledVisuals.innerHTML = `
+          <img src="${superPlastronicsImg1}" alt="QLED campaign creative">
+          <img src="${superPlastronicsImg2}" alt="QLED TV launch creative">
+        `;
+
+        creatorWall.parentNode.insertBefore(qledVisuals, creatorWall);
+      }
+    }
+  });
+});
+</script>
 </body>
 </html>
