@@ -4668,5 +4668,238 @@ document.addEventListener("DOMContentLoaded", function () {
   setCompanyLogo("Symbiosis", symbiosisLogo, "SIU");
 });
 </script>
+   <!-- FINAL ROBUST IMAGE FIX: PHOTO + SPPL + SYMBIOSIS -->
+<style>
+/* =========================================================
+   FINAL ROBUST IMAGE FIX
+========================================================= */
+
+/* Profile image */
+.profile-head {
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+.avatar {
+  width: 120px !important;
+  height: 120px !important;
+  min-width: 120px !important;
+  border-radius: 30px !important;
+  overflow: hidden !important;
+  background: #f3f0e8 !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: 0 18px 34px rgba(16,16,16,0.10) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--green) !important;
+  font-family: var(--serif) !important;
+  font-size: 2rem !important;
+}
+
+.avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+}
+
+/* Company logo boxes */
+.exp-logo.logo-img {
+  width: 128px !important;
+  height: 70px !important;
+  padding: 12px !important;
+  border-radius: 18px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.20) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+.exp-logo.logo-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Text fallback if image truly not found */
+.exp-logo.text-badge {
+  width: auto !important;
+  min-width: 72px !important;
+  height: 44px !important;
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.20) !important;
+  color: #ffffff !important;
+  font-family: var(--mono) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Make sure logo area does not collapse */
+.exp-card .exp-logo {
+  margin-bottom: 8px !important;
+}
+
+@media (max-width: 620px) {
+  .avatar {
+    width: 92px !important;
+    height: 92px !important;
+    min-width: 92px !important;
+  }
+
+  .exp-logo.logo-img {
+    width: 112px !important;
+    height: 62px !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  /*
+    This script tries multiple possible filenames.
+    So even if your GitHub file name is slightly different,
+    it has a better chance of working.
+  */
+
+  const PHOTO_CANDIDATES = [
+    "photo.jpg",
+    "Photo.jpg",
+    "photo.jpeg",
+    "Photo.jpeg",
+    "photo.png",
+    "Photo.png",
+    "abhishek.jpg",
+    "Abhishek.jpg",
+    "abhishek.jpeg",
+    "Abhishek.jpeg",
+    "abhishek photo.jpg",
+    "Abhishek photo.jpg",
+    "Abhishek Pal.jpg",
+    "Abhishek Pal.jpeg",
+    "Abhishek Pal.png"
+  ];
+
+  const SPPL_CANDIDATES = [
+    "SPPL-logo.png",
+    "SPPL Logo.png",
+    "sppl-logo.png",
+    "sppl logo.png",
+    "SPPL.png",
+    "sppl.png",
+    "Super Plastronics logo.png",
+    "Super Plastronics Logo.png",
+    "super-plastronics-logo.png",
+    "super plastronics logo.png",
+    "Super Plastronics logo PNG.png",
+    "Super Plastronics logo.jpg",
+    "Super Plastronics logo.jpeg"
+  ];
+
+  const SYMBIOSIS_CANDIDATES = [
+    "symbiosis-logo.png",
+    "Symbiosis-logo.png",
+    "Symbiosis logo.png",
+    "symbiosis logo.png",
+    "Symbiosis Logo.png",
+    "symbiosis.png",
+    "Symbiosis.png",
+    "SIU-logo.png",
+    "SIU logo.png",
+    "siu-logo.png",
+    "siu logo.png",
+    "Symbiosis logo PNG.png",
+    "Symbiosis logo.jpg",
+    "Symbiosis logo.jpeg"
+  ];
+
+  function tryImageSources(img, candidates, fallback) {
+    let index = 0;
+
+    function tryNext() {
+      if (index >= candidates.length) {
+        if (fallback) fallback();
+        return;
+      }
+
+      img.src = candidates[index];
+      index += 1;
+    }
+
+    img.onerror = tryNext;
+    tryNext();
+  }
+
+  /* 1. Fix profile photo */
+  const avatar = document.querySelector(".avatar");
+
+  if (avatar) {
+    avatar.innerHTML = "";
+
+    const photo = document.createElement("img");
+    photo.alt = "Abhishek Pal";
+
+    avatar.appendChild(photo);
+
+    tryImageSources(photo, PHOTO_CANDIDATES, function () {
+      avatar.innerHTML = "AP";
+    });
+  }
+
+  /* Helper: find card by heading */
+  function findExperienceCard(companyName) {
+    let target = null;
+
+    document.querySelectorAll(".exp-card").forEach(function (card) {
+      const heading = card.querySelector("h3");
+      if (!heading) return;
+
+      if (heading.textContent.trim().toLowerCase() === companyName.toLowerCase()) {
+        target = card;
+      }
+    });
+
+    return target;
+  }
+
+  function setLogoWithCandidates(companyName, candidates, fallbackText) {
+    const card = findExperienceCard(companyName);
+    if (!card) return;
+
+    const oldLogo = card.querySelector(".exp-logo");
+    if (!oldLogo) return;
+
+    oldLogo.className = "exp-logo logo-img";
+    oldLogo.innerHTML = "";
+
+    const img = document.createElement("img");
+    img.alt = companyName + " logo";
+
+    oldLogo.appendChild(img);
+
+    tryImageSources(img, candidates, function () {
+      oldLogo.className = "exp-logo text-badge";
+      oldLogo.textContent = fallbackText;
+    });
+  }
+
+  /* 2. Fix SPPL logo */
+  setLogoWithCandidates("Super Plastronics", SPPL_CANDIDATES, "SPPL");
+
+  /* 3. Fix Symbiosis logo */
+  setLogoWithCandidates("Symbiosis", SYMBIOSIS_CANDIDATES, "SIU");
+});
+</script>
 </body>
 </html>
